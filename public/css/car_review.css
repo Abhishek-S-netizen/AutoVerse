@@ -1,0 +1,368 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DEDCD9;
+}
+
+header {
+    font-family: Audiowide;
+    height: 20rem;
+    background-color: #171717;
+}
+
+#title {
+    padding-top: 5rem;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.redirect_links a {
+    color: #38C498;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.redirect_links a:hover {
+    color: white;
+}
+
+#hero_image_section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#hero_image {
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.login_link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.login_link:hover {
+    color: #38C498;
+}
+
+#car_meta_info {
+    font-family: Audiowide;
+    background-color: #333333;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 1rem;
+    height: 15rem;
+    width: 30rem;
+}
+
+.meta_card {
+    color: white;
+    background-color: inherit;
+    border: none;
+}
+
+#car_renting_redirect a {
+    text-decoration: none;
+    color: #333333;
+    background-color: #38C498;
+    color: black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#specs {
+    padding-bottom: 5rem;
+}
+
+.specs-container {
+    font-family: Oxanium;
+    background-color: inherit;
+    color: black;
+
+    margin-left: 7rem;
+    border-radius: 1rem;
+    width: 50%;
+}
+
+#specs div ul li {
+    background-color: inherit;
+}
+
+.spec_button {
+    font-family: Audiowide;
+    background-color: #38C498 !important;
+}
+
+p {
+    text-align: justify;
+}
+
+#interior {
+    font-family: Oxanium;
+    padding-top: 5rem;
+}
+
+#drive {
+    font-family: Oxanium;
+    padding-top: 5rem;
+}
+
+#safety {
+    font-family: Oxanium;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#infotainment_image img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.feature_spec_button {
+    position: relative;
+    overflow: hidden;
+    border: none !important;
+    border-radius: 0.5rem;
+    transition: color 0.5s ease;
+}
+
+.feature_spec_button * {
+    position: relative;
+    z-index: 5;
+}
+
+.feature_spec_button:hover {
+    color: #38C498 !important;
+}
+
+.feature_spec_button::before {
+    position: absolute;
+    content: "";
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.feature_spec_button:hover::before {
+    left: 0;
+    top: 0;
+}
+
+form .remove_wishlist {
+    position: relative;
+    overflow: hidden;
+    background-color: #171717;
+    color: #38C498;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+form .remove_wishlist *,
+.add_wishlist * {
+    position: relative;
+    z-index: 5;
+}
+
+form .remove_wishlist:hover {
+    color: #171717;
+}
+
+form .remove_wishlist::before {
+    position: absolute;
+    content: "";
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    transition: left 0.3s ease, top 0.3s ease;
+}
+
+form .remove_wishlist:hover::before {
+    left: 0;
+    top: 0;
+}
+
+form .add_wishlist {
+    position: relative;
+    overflow: hidden;
+    background-color: #38C498;
+    color: #171717;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+form .add_wishlist:hover {
+    color: #38C498;
+}
+
+form .add_wishlist::before {
+    position: absolute;
+    content: "";
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #171717;
+    transition: left 0.3s ease, top 0.3s ease;
+}
+
+form .add_wishlist:hover::before {
+    left: 0;
+    top: 0;
+}
+
+footer {
+    font-family: Oxanium;
+    background-color: #38C498;
+    padding: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #171717;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+@media (max-width: 992px) {
+
+    header {
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    #title {
+        font-size: 2.8rem;
+        padding-top: 3rem;
+    }
+
+    #hero_image_container {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 3rem;
+    }
+
+    #car_meta_info {
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .specs-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer .container {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
+    header {
+        text-align: center;
+    }
+
+    .title_container {
+        justify-content: center;
+    }
+
+    #title {
+        text-align: center;
+        font-size: 2.2rem;
+        padding-top: 2.5rem;
+    }
+
+    .redirect_links {
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .redirect_links a {
+        font-size: 0.6rem;
+    }
+
+    /* Hero section */
+    #hero_image_section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    #hero_image {
+        border-radius: 0.75rem;
+    }
+
+    #car_meta_info {
+        width: 100%;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    /* Cards inside meta */
+    #car_meta_info .card {
+        width: 100% !important;
+    }
+
+    /* Specs */
+    .specs-container {
+        width: 90%;
+        margin: auto;
+        border-radius: 0.75rem;
+    }
+
+    /* Sections */
+    #intro h1,
+    #interior h1,
+    #drive h1,
+    #safety h1 {
+        font-size: 1.6rem;
+        text-align: left;
+    }
+
+    .container p {
+        font-size: 1rem;
+    }
+
+    /* Images */
+    #infotainment_image img {
+        border-radius: 0.75rem;
+    }
+
+    /* Footer */
+    footer .container {
+        gap: 1rem;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+}

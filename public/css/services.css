@@ -1,0 +1,61 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Zain;
+}
+
+header {
+    padding-top: 5rem;
+}
+
+.services {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    gap: 5rem;
+}
+
+.service_card {
+    overflow: hidden;
+    width: 32rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service_card.show_card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.service_card img {
+    transition: transform 0.5s ease;
+}
+
+.service_card:hover img {
+    transform: scale(1.05);
+}
+
+.service_card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
+}
+
+.service_card div {
+    background-color: black;
+    color: white;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    border: none;
+}
+
+.service_card div h3 {
+    color: #D4AF37;
+}
+
+.service_card div p {
+    line-height: 2rem;
+}

@@ -1,0 +1,490 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Zain;
+    transition: background-color 0.5s ease;
+}
+
+.dashboard-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.dashboard-content.show-dashboard {
+    opacity: 1;
+}
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    background-color: #DEDCD9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Audiowide;
+    color: #333333;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in, opacity 0.5s ease;
+}
+
+.page-loader * {
+    position: relative;
+    z-index: 9999;
+}
+
+.page-loader.remove-page-loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-loader.change-bg {
+    background-color: #333333;
+    color: #38C498;
+}
+
+#loading-message {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+#loading-message.show-message {
+    opacity: 1;
+}
+
+#loading-title {
+    padding-top: 5rem;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+#loading-title.show-title {
+    opacity: 1;
+}
+
+.page-loader img {
+    display: block;
+    margin: auto;
+    width: 25%;
+    opacity: 0;
+    filter: blur(5px);
+    transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, filter 2s ease;
+}
+
+.page-loader img.place {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.page-loader img.drive {
+    opacity: 1;
+    transform: scale(1.5);
+    filter: blur(0);
+}
+
+body.dark-mode {
+    background-color: #171717;
+}
+
+.nav_custom .navbar_custom {
+    font-family: Audiowide;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: fixed;
+    height: 100%;
+    background-color: #333333;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    color: #38C498;
+    z-index: 25;
+}
+
+.nav_custom .navbar_custom a {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: white;
+    width: 9.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: color 0.4s ease;
+}
+
+.nav_custom .navbar_custom button {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    color: white;
+    width: 7rem;
+    text-align: left;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: color 0.4s ease;
+}
+
+.nav_custom .navbar_custom button * {
+    position: relative;
+    z-index: 5;
+}
+
+.nav_custom .navbar_custom button:hover {
+    color: black;
+}
+
+.nav_custom .navbar_custom button::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.nav_custom .navbar_custom button:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.nav_custom .navbar_custom a:hover {
+    color: #38C498;
+}
+
+/*.nav_custom .navbar_custom a * {
+    position: relative;
+    z-index: 5;
+}
+
+.nav_custom .navbar_custom a::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.nav_custom .navbar_custom a:hover::before {
+    left: 0;
+    top: 0;
+}*/
+
+.welcome {
+    padding-top: 5rem;
+}
+
+.welcome_nav {
+    font-family: Audiowide;
+    background-color: #38C498;
+    position: fixed;
+    width: 100%;
+    padding-left: 20rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 50rem;
+    align-items: center;
+    z-index: 20;
+}
+
+.user_functions_section {
+    font-family: Oxanium;
+    padding-top: 9rem;
+    padding-left: 16rem;
+}
+
+.profile_section {
+    margin-top: 5rem;
+    padding-left: 16rem;
+    padding-bottom: 5rem;
+}
+
+.user_functions_div {
+    display: flex;
+
+}
+
+.wishlist_card,
+.order_card {
+    position: relative;
+    overflow: hidden;
+    background-color: #DEDCD9;
+    padding: 2rem;
+    width: 40%;
+    border-radius: 1.5rem;
+    color: #171717;
+
+    transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.wishlist_card.dark-mode-wishlist {
+    background-color: #333333;
+    color: #DEDCD9;
+}
+
+.order_card.dark-mode-order {
+    background-color: #333333;
+    color: #DEDCD9;
+}
+
+.wishlist_card a,
+.order_card a {
+    text-decoration: none;
+    color: #333333;
+    margin-top: 1rem;
+    font-weight: bolder;
+    transition: color 0.5s ease;
+}
+
+.order_card a.dark-mode-order-link {
+    color: #38C498;
+}
+
+.wishlist_card a.dark-mode-wishlist-link {
+    color: #38C498;
+}
+
+.wishlist_card *,
+.order_card * {
+    position: relative;
+    z-index: 5;
+}
+
+.order_card a:hover {
+    color: #38C498;
+}
+
+.wishlist_card a:hover {
+    color: #38C498;
+}
+
+.wishlist_card:hover,
+.order_card:hover {
+    transform: scale(0.95);
+}
+
+.icon-link-hover {
+    font-size: large !important;
+}
+
+.icon-link-hover:hover svg {
+    transform: translateX(0.5rem) !important;
+}
+
+.profile_card {
+    width: 92%;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    color: #171717;
+    transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.profile_card.dark-mode-profile {
+    background-color: transparent;
+    color: #DEDCD9;
+}
+
+.credentials {
+    gap: 5rem;
+    align-items: center;
+}
+
+.edit-profile-form button {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    color: #171717;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: color 0.4s ease;
+}
+
+.edit-profile-form button * {
+    position: relative;
+    z-index: 5;
+}
+
+.edit-profile-form button:hover {
+    color: #38C498;
+}
+
+.edit-profile-form button::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #171717;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.edit-profile-form button:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.edit-profile-form button.dark-mode-button {
+    color: #38C498;
+}
+
+.edit-profile-form button.dark-mode-button:hover {
+    color: #171717;
+}
+
+.edit-profile-form button.dark-mode-button::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.edit-profile-form button.dark-mode-button:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.card_title {
+    font-weight: bolder;
+    color: #171717;
+}
+
+.card_title.dark-mode-title {
+    color: #38C498;
+}
+
+.form-check-input {
+    background-color: white;
+    border: 1px solid #171717;
+    width: 2.5rem !important;
+    height: 1.3rem !important;
+}
+
+.form-check-input:checked {
+    background-color: #38C498;
+    border-color: #38C498;
+}
+
+.beta-tag {
+    background-color: #38C498;
+    color: #171717;
+    padding-top: 0.05rem;
+    padding-bottom: 0.05rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bolder;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+}
+
+/* =====================================
+   MOBILE RESPONSIVE FIX – DASHBOARD
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    /* Remove sidebar fixed layout */
+    .nav_custom .navbar_custom {
+        position: relative;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #clock {
+        display: none;
+    }
+
+    .nav_custom .navbar_custom h2 {
+        font-size: 1rem;
+    }
+
+    .nav_custom .navbar_custom a,
+    .nav_custom .navbar_custom button {
+        width: auto;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    /* Fix welcome bar */
+    .welcome_nav {
+        position: relative;
+        padding: 1rem;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    /* Remove desktop paddings */
+    .user_functions_section,
+    .profile_section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 2rem;
+    }
+
+    /* Stack wishlist + order vertically */
+    .user_functions_div {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .wishlist_card,
+    .order_card {
+        width: 100%;
+    }
+
+    /* Fix profile section */
+    .profile_card {
+        width: 100%;
+    }
+
+    .credentials {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    /* Fix loader image */
+    .page-loader img {
+        width: 70%;
+    }
+
+}

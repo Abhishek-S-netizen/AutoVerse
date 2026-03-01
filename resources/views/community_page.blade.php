@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {{ $car->brand }} {{ $car->model }} - Community
+    </title> 
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+
+    <link href="{{ asset('css/bootstrap-5.3.8-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
+
+</head>
+<body onload="showGarage()">
+    <nav class="redirect_dashboard">
+        <a href="/user">
+            <span>Back to dashboard</span>
+        </a>
+    </nav>
+
+    <div class="garage">
+        <section class="container my-5 filter-review-brand">
+            <div class="card form-card">
+                <div class="card-body p-4">
+
+                    <h4 class="mb-4 fw-bold">
+                        <i class="fa-solid fa-comments me-2"></i>
+                        Start a Discussion
+                    </h4>
+
+                    <form action="/community-post" method="POST" class="post">
+                        @csrf
+
+                        <!-- Hidden Car ID -->
+                        <input type="hidden" name="car_id" value="{{ $car->id }}">
+
+                        <!-- Post Title -->
+                        <div class="mb-5">
+                            <input type="text"
+                                name="post_title"
+                                class="form-control rounded-3"
+                                placeholder="Give your post a title..."
+                                required>
+                        </div>
+
+                        <div class="mb-5">
+                           <textarea name="post_content"
+                                    class="form-control rounded-3"
+                                    rows="4"
+                                    placeholder="Share your experience with this car..."
+                                    required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="add_rent ps-3 pe-3">
+                                <span>
+                                    <i class="fa-solid fa-paper-plane me-2"></i>
+                                    Post
+                                </span>    
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="cars">
+            <div class="container d-flex flex-wrap gap-5">
+                @foreach($posts as $x)
+                    <div class="card service_card span_card">
+                        <div class="card-body">
+                            <h3 class="card-title fs-4">{{ $x->post_title }}</h3>
+                            <h5 class="card-title fs-6">{{ $x->user->name }} </h5>
+                            <a href="/user-profile/{{ $x->user->id }}" target="_blank">Check out {{ $x->user->name }}'s profile</a>
+                            <p class="mt-3">
+                                {{ $x->post }}
+                            </p>
+                        </div>
+                        <div class="mt-3 ps-3 border-start">
+                            @foreach($x->replies as $reply)
+                                <div class="mb-2">
+                                    <strong>{{ $reply->user->name }}</strong>
+                                    <p class="mb-1">{{ $reply->reply }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <form action="/community-reply" method="POST" class="mt-3">
+                            @csrf
+                            <input type="hidden" name="post_id" value="{{ $x->id }}">
+
+                            <div class="input-group">
+                                <input type="text" name="reply" class="form-control" placeholder="Write a reply..." required>
+
+                                <button class="add_rent" type="submit">
+                                    <span>Reply</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+    </div>
+    
+    <div class="d-flex justify-content-center pagination_container mt-5 mb-5">
+        {{ $posts->links() }}
+    </div>
+
+    <script src="{{ asset('js/garage.js') }}"></script>
+</body>
+</html>

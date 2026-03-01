@@ -1,0 +1,466 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DEDCD9;
+}
+
+.navbar_custom {
+    font-family: Audiowide;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    padding: 1rem;
+    gap: 5rem;
+    opacity: 0;
+    transition: width 0.5s ease, border-radius 0.5s ease, margin-top 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease, opacity 1s ease;
+}
+
+.navbar_custom.show-navbar {
+    opacity: 1;
+}
+
+.navbar_custom.shrink {
+    background-color: #333333;
+    width: 50%;
+    border-radius: 2rem;
+    margin-top: 0.7rem;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+}
+
+.navbar_custom.shrink a {
+    color: #38C498;
+}
+
+.navbar_custom a {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    color: #38C498;
+    font-size: 1rem;
+    text-decoration: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    border-radius: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar_custom a * {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar_custom a:hover {
+    color: #171717;
+}
+
+.navbar_custom a::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    pointer-events: none;
+    transition: left 0.3s ease, top 0.3s ease;
+}
+
+.navbar_custom a:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.tagline a {
+    text-decoration: none;
+}
+
+.tagline h3:hover {
+    color: #38C498;
+}
+
+.tagline h3 {
+    padding-top: 9rem;
+    font-family: Audiowide;
+    color: #171717;
+    opacity: 0;
+    transition: opacity 1s ease, color 0.5s ease;
+}
+
+.tagline h3.show-tagline {
+    opacity: 1;
+}
+
+header {
+    padding-bottom: 10rem;
+    z-index: 10;
+    background: linear-gradient(#171717, #DEDCD9);
+}
+
+.landing_page {
+    position: relative;
+    height: 30rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 65vh;
+}
+
+.landing_page::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.landing_page .one {
+    position: absolute;
+    width: 50%;
+    top: 55%;
+    left: 10%;
+    z-index: 13;
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+}
+
+.landing_page .two {
+    position: absolute;
+    width: 50%;
+    top: 55%;
+    left: 25%;
+    z-index: 12;
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+}
+
+.landing_page .three {
+    position: absolute;
+    width: 50%;
+    top: 55%;
+    left: 40%;
+    z-index: 11;
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease;
+}
+
+.landing_page .one:hover {
+    transform: translateX(10%) !important;
+}
+
+.landing_page .two:hover {
+    transform: translateX(10%) !important;
+}
+
+.landing_page .three:hover {
+    transform: translateX(10%) !important;
+}
+
+.landing_page .one.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.landing_page .two.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.landing_page .three.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.landing_title {
+    position: absolute;
+    justify-content: center;
+    font-family: Audiowide;
+    left: 50%;
+    top: 80%;
+    width: 80%;
+    opacity: 0;
+    transform: translate(-50%);
+    transition: top 1.5s ease, opacity 1.5s ease;
+}
+
+.landing_title h1 {
+    font-size: 6rem;
+}
+
+.landing_title.show-landing-title {
+    top: 40%;
+    opacity: 1;
+}
+
+.comparison_section {
+    font-family: Oxanium;
+    padding-bottom: 5rem;
+}
+
+.comparison_card_link {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.4s ease;
+}
+
+.comparison_card_link * {
+    position: relative;
+    z-index: 10;
+}
+
+.comparison_card_link:hover {
+    color: #38C498;
+}
+
+.comparison_card_link:hover img {
+    transform: scale(0.9);
+}
+
+.comparison_card {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 1rem;
+    padding-bottom: 1rem;
+    width: 40rem;
+    justify-content: space-around;
+}
+
+.comparison_card::before {
+    position: absolute;
+    content: "";
+    border-radius: 1rem;
+    top: -100%;
+    left: -100%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #171717;
+    transition: left 0.4s ease, top 0.4s ease;
+}
+
+.comparison_card:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.comparison_card .compare_car {
+    justify-content: center !important;
+}
+
+.comparison_card img {
+    width: 80%;
+    display: block;
+    margin: auto;
+    transition: transform 0.5s ease;
+}
+
+.comparison_card .car_name {
+    justify-content: center;
+}
+
+.select_custom_comparison {
+    font-family: Oxanium;
+    padding-bottom: 5rem;
+}
+
+.select_custom_comparison form {
+    width: 70%;
+}
+
+.submit_button {
+    background-color: #38C498;
+    color: #171717;
+}
+
+.submit_button:hover {
+    background-color: #171717;
+    color: #38C498;
+}
+
+select {
+    background-color: #333333 !important;
+    color: #38C498 !important;
+    border: none !important;
+    font-weight: bolder !important;
+}
+
+footer {
+    font-family: Oxanium;
+    background-color: #38C498;
+    padding: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #171717;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    /* ================= NAV ================= */
+    .navbar_custom {
+        width: 100% !important;
+        transform: none;
+        left: 0;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+
+    .navbar_custom.shrink {
+        width: 100% !important;
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    /* ================= HERO ================= */
+    .landing_page {
+        height: 50vh;
+        background-attachment: scroll;
+    }
+
+    .landing_page .one,
+    .landing_page .two,
+    .landing_page .three {
+        display: none;
+    }
+
+    .landing_title {
+        justify-content: center;
+    }
+
+    .landing_title h1 {
+        font-size: 2rem;
+    }
+
+    /* ================= TAGLINE ================= */
+    .tagline h3 {
+        padding-top: 6rem;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .title_phone h1 {
+        text-align: center !important;
+    }
+
+    /* ================= CUSTOM SELECT SECTION ================= */
+
+    .select_custom_comparison .ms-5,
+    .select_custom_comparison .ps-5 {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .select_custom_comparison form {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    /* ================= CARDS ================= */
+
+    .comparison_card {
+        width: 100%;
+        max-width: 95%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .comparison_card img {
+        width: 90%;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer .container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* ===== NAVBAR ===== */
+    .navbar_custom {
+        gap: 2.5rem;
+        width: 80%;
+    }
+
+    .landing_page .one {
+        top: 70%;
+    }
+
+    .landing_page .two {
+        top: 70%;
+    }
+
+    .landing_page .three {
+        top: 70%;
+    }
+
+    .navbar_custom.shrink {
+        width: 70%;
+    }
+
+    .navbar_custom a {
+        font-size: 0.95rem;
+    }
+
+    /* ===== LANDING ===== */
+    .landing_title h1 {
+        font-size: 4.5rem;
+    }
+
+    .landing_page img {
+        width: 80%;
+        top: 60%;
+    }
+
+    .tagline h3 {
+        font-size: 1.3rem;
+    }
+
+    /* ===== FILTER ===== */
+    .filter-review-brand form {
+        width: 60%;
+    }
+
+    /* ===== CARDS ===== */
+    .service_card {
+        width: 20rem !important;
+    }
+
+    /* ===== SPACING ===== */
+    .reviews {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    footer {
+        font-size: 0.95rem;
+    }
+}
