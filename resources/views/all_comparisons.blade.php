@@ -28,7 +28,8 @@
 </head>
 
 <body onload="animateIntro()">
-    <nav class="justify-content-center navbar_custom" data-bs-theme="dark">
+    @include("loader")
+    <nav class="justify-content-around navbar_custom" data-bs-theme="dark">
         <a href="/">
             <span>Home</span>
         </a>

@@ -29,7 +29,8 @@
 </head>
 
 <body onload="animateIntro()">
-    <nav class="justify-content-center" data-bs-theme="dark">
+    @include("loader")
+    <nav class="justify-content-around" data-bs-theme="dark">
         <a href="#home">
             <span>Home</span>
         </a>
@@ -281,10 +282,10 @@
 
         <div class="container d-flex gap-4 mt-3 justify-content-between">
             <div class="d-flex gap-4">
-                <a href="">Reviews</a>
-                <a href="">EVs</a>
-                <a href="">Comparisons</a>
-                <a href="">Login</a>
+                <a href="/reviews">Reviews</a>
+                <a href="/electric-cars">EVs</a>
+                <a href="/comparisons">Comparisons</a>
+                <a href="/signup">Login</a>
                 <a href="#" class="text-decoration-none">
                     Back to top
                 </a>
@@ -308,9 +309,9 @@
             <div>
                 <h6><strong>Follow us on : </strong></h6>
                 <div class="d-flex gap-5">
-                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i> YouTube</a>
                 </div>
             </div>
         </div>

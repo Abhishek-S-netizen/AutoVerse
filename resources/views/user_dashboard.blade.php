@@ -82,7 +82,7 @@
                     <span><i class="fa-solid fa-warehouse"></i> Garage</span>
                 </a>    
                 <a href="/communities">
-                    <span><i class="fa-solid fa-users"></i> Communities</span>
+                    <span><i class="fa-solid fa-comments"></i> Communities</span>
                 </a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

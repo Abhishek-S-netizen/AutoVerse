@@ -28,10 +28,28 @@
 
     <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
 </head>
+
 <body onload="showGarage()">
+    @include("loader")
     <nav class="redirect_dashboard">
+        <a href="/admin">
+            <span>Dashboard</span>
+        </a>
+
         <a href="/all-admin-users">
-            <span>All users</span>
+            <span>All Users</span>
+        </a>
+
+        <a href="/all-admin-orders">
+            <span>Live Orders</span>
+        </a>
+
+        <a href="/all-admin-past-orders">
+            <span>Past Orders</span>
+        </a>
+
+        <a href="/admin-all-communities">
+            <span>Communities</span>
         </a>
     </nav>
 

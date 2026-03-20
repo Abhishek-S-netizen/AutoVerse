@@ -28,10 +28,24 @@
 
     <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
 </head>
+
 <body onload="showGarage()">
+    @include("loader")
     <nav class="redirect_dashboard">
         <a href="/admin">
-            <span>Back to dashboard</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="/all-admin-orders">
+            <span>Live Orders</span>
+        </a>
+
+        <a href="/admin-all-communities">
+            <span>Communities</span>
+        </a>
+
+        <a href="/all-admin-users">
+            <span>Users</span>
         </a>
     </nav>
 
@@ -46,6 +60,7 @@
                     <div class="card service_card span_card">
                         <div class="card-body">
                             <h5 class="card-title fs-4">{{ $x->car->brand }} {{ $x->car->model }} </h5>
+                            <hr>
                         </div>
 
                         <div class="specs-container">

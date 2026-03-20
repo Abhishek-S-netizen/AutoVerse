@@ -55,4 +55,34 @@ class CommunityController extends Controller
 
         return back()->with('success', 'Post created successfully!');
     }
+
+    public function showAdminCarCommunity($slug) {
+        $car = Car::where("slug",$slug)->firstOrFail();
+        $posts = $car->communityPosts()->with(["user","replies.user"])->paginate(6);
+        return view("admin_car_community", compact("car","posts"));
+    }
+
+    public function deleteAdminPost(Request $request) {
+        $request->validate([
+            "post_id" => "required|exists:community_posts,id"
+        ]);
+
+        $postID = $request->post_id;
+
+        $post = CommunityPosts::where("id",$postID)->firstOrFail();
+        $post->delete();
+        return redirect()->back()->with("success","Post deleted successfully");
+    }
+
+    public function deleteAdminReply(Request $request) {
+        $request->validate([
+            "reply_id" => "required|exists:community_replies,id"
+        ]);
+
+        $replyID = $request->reply_id;
+        $reply = CommunityReply::where("id",$replyID)->firstOrFail();
+        $reply->delete();
+
+        return redirect()->back()->with("success","Reply deleted successfully");
+    }
 }

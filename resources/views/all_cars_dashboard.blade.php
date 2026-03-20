@@ -28,10 +28,18 @@
 
     <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
 </head>
+
 <body onload="showGarage()">
-    <nav class="redirect_dashboard">
+    @include("loader")
+    <nav class="redirect_dashboard gap-5">
         <a href="/user">
-            <span>Back to dashboard</span>
+            <span>Dashboard</span>
+        </a>
+        <a href="/communities">
+            <span>Communities</span>
+        </a>
+        <a href="/">
+            <span>Home</span>
         </a>
     </nav>
 
@@ -52,7 +60,7 @@
                     <div class="row g-3 mb-4">
                         <div class="mb-5">
                                 <label class="mb-1" for="car_id">Select brand</label>
-                                <select name="brand" id="car_id" class="form-control" required>
+                                <select name="brand" id="car_id" class="form-control border-3" required>
                                         @foreach($allBrands as $x)
                                             <option value="{{ $x->brand }}">
                                                     {{ $x->brand }}
@@ -135,7 +143,7 @@
                                     <input type="hidden" value="{{ $x->id }}" name="car_id_number">
                                     <button class="remove_wishlist">
                                         <span>
-                                            <i class="fa-solid fa-heart text-danger"></i> Remove from wishlist
+                                            <i class="fa-solid fa-heart-circle-minus text-danger"></i> Remove from wishlist
                                         </span>
                                     </button>   
                                 </form>

@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    @include("loader")
     <nav>
         <a href="/admin">
             <span>Back to dashboard</span>

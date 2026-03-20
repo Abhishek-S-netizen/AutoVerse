@@ -29,9 +29,22 @@
     <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
 </head>
 <body onload="showGarage()">
+    @include("loader")
     <nav class="redirect_dashboard">
         <a href="/admin">
-            <span>Back to dashboard</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="/all-admin-orders">
+            <span>Live Orders</span>
+        </a>
+
+        <a href="/all-admin-past-orders">
+            <span>Past Orders</span>
+        </a>
+
+        <a href="/admin-all-communities">
+            <span>Communities</span>
         </a>
     </nav>
 
@@ -61,7 +74,8 @@
                         </div>
 
                         <div class="d-flex align-items-center">
-                            <form action="/remove-user" method="POST">
+                            <form action="/remove-user" method="POST" onsubmit=
+                            "return confirmDeleteUser()">
                                 @csrf
                                 <input type="hidden" value="{{ $x->id }}" name="user_id_number">
                                 <button type="submit" class="return_car">

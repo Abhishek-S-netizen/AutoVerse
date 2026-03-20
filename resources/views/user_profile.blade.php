@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('css/user_profile.css') }}">
 </head>
 <body onload="showGarage()">
+    @include("loader")
     <nav class="redirect_dashboard">
         <a href="/user">
             <span>Back to dashboard</span>

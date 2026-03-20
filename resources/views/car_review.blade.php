@@ -29,6 +29,7 @@
 </head>
 
 <body>
+    @include("loader")
     <header>
         <div id="title_container" class="container d-flex title_container">
             <h1 id="title">
@@ -67,6 +68,8 @@
                             @for($i = 0; $i < $carDetail->rating; $i++)
                                 <i style="color:#38C498" class="fa-solid fa-star"></i>
                             @endfor
+                            <br><br><br>
+                            Rent Price : ₹{{ $car->rent_price }}
                         </p>
                     </div>
                 </div>

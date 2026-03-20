@@ -34,6 +34,7 @@
 </head>
 
 <body>
+    @include("loader")
     <div class="parallax" style="background-image: url('{{ asset('images/polestar_2_demo.jpg') }}')">
     @if(session('success'))
         <div class="alert alert-success">

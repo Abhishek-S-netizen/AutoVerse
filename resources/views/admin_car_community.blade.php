@@ -31,23 +31,35 @@
 
 <body onload="showGarage()">
     @include("loader")
-    <nav class="redirect_dashboard gap-5">
-        <a href="/user">
+    <nav class="redirect_dashboard">
+        <a href="/admin">
             <span>Dashboard</span>
         </a>
-        <a href="/communities">
-            <span>Communities</span>
+
+        <a href="/admin-all-communities">
+            <span>All communities</span>
         </a>
-        <a href="/cars/list">
-            <span>Garage</span>
+
+        <a href="/all-admin-orders">
+            <span>Live Orders</span>
         </a>
-        <a href="/">
-            <span>Home</span>
+
+        <a href="/all-admin-past-orders">
+            <span>Past Orders</span>
+        </a>
+
+        <a href="/all-admin-users">
+            <span>Users</span>
         </a>
     </nav>
 
     <div class="garage">
-        <section class="container my-5 filter-review-brand">
+        <div class="d-flex justify-content-center page-title">
+            <h1>
+                {{ $car->brand }} {{ $car->model }} - Community
+            </h1>
+        </div>
+        <!-- <section class="container my-5 filter-review-brand">
             <div class="card form-card">
                 <div class="card-body p-4">
 
@@ -56,30 +68,30 @@
                         Start a Discussion
                     </h4>
 
-                    <form action="/community-post" method="POST" class="post w-50">
+                    <form action="/community-post" method="POST" class="post">
                         @csrf
 
-                        <!-- Hidden Car ID -->
+                        <!-- Hidden Car ID 
                         <input type="hidden" name="car_id" value="{{ $car->id }}">
 
-                        <!-- Post Title -->
+                        <!-- Post Title
                         <div class="mb-5">
                             <input type="text"
                                 name="post_title"
-                                class="form-control border-3 rounded-3"
+                                class="form-control rounded-3"
                                 placeholder="Give your post a title..."
                                 required>
                         </div>
 
                         <div class="mb-5">
                            <textarea name="post_content"
-                                    class="form-control border-3 rounded-3"
+                                    class="form-control rounded-3"
                                     rows="4"
                                     placeholder="Share your experience with this car..."
                                     required></textarea>
                         </div>
 
-                        <!-- Submit Button -->
+                        <!-- Submit Button
                         <div class="text-center">
                             <button type="submit" class="add_rent ps-3 pe-3">
                                 <span>
@@ -91,9 +103,9 @@
                     </form>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="cars">
+        <section class="cars mt-5">
             <div class="container d-flex flex-wrap gap-5">
                 @foreach($posts as $x)
                     <div class="card service_card span_card">
@@ -104,28 +116,27 @@
                             <p class="mt-3">
                                 {{ $x->post }}
                             </p>
+                            <form action="/delete-admin-post" method="POST" class="p-0" onsubmit="return confirmDeletePost()">
+                                @csrf
+                                <input type="hidden" value="{{ $x->id }}" name="post_id">
+                                <button type="submit" class="add_rent">
+                                    <span>Delete post</span>
+                                </button>
+                            </form>
                         </div>
                         <div class="mt-3 ps-3 border-start">
                             @foreach($x->replies as $reply)
-                                <div class="mb-2">
+                                <div class="mb-4">
                                     <strong>{{ $reply->user->name }}</strong>
                                     <p class="mb-1">{{ $reply->reply }}</p>
+                                    <form action="/delete-admin-reply" method="POST" class="p-0" onsubmit="return confirmDeleteReply()">
+                                        @csrf
+                                        <input type="hidden" value="{{ $reply->id }}" name="reply_id">
+                                        <button type="submit" class="delete_reply p-0">Delete reply</button>
+                                    </form>
                                 </div>
                             @endforeach
                         </div>
-
-                        <form action="/community-reply" method="POST" class="mt-3">
-                            @csrf
-                            <input type="hidden" name="post_id" value="{{ $x->id }}">
-
-                            <div class="input-group">
-                                <input type="text" name="reply" class="form-control" placeholder="Write a reply..." required>
-
-                                <button class="add_rent" type="submit">
-                                    <span>Reply</span>
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 @endforeach
             </div>

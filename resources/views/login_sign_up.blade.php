@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    @include("loader")
     <div class="parallax" style="background-image: url('{{ asset('images/polestar_2.jpg') }}')">
     @if($errors->any())
         <div class="alert alert-danger">

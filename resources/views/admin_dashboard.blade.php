@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     </head>
     <body>
+        @include("loader")
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
@@ -52,6 +53,9 @@
                 </a>
                 <a href="#delete-details">
                     <span><i class="fa-solid fa-trash"></i> Delete details</span>
+                </a>
+                <a href="/admin-all-communities">
+                    <span><i class="fa-solid fa-comments"></i> Communities</span>
                 </a>
                 <form method="POST" action="{{ route('admin.logout') }}" class="logout_form">
                     @csrf

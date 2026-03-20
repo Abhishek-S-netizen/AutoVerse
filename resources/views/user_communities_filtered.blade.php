@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {{ Auth::user()->name }} - Communities
+        {{ $brand }} - Communities
     </title>
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
@@ -31,53 +31,21 @@
 
 <body onload="showGarage()">
     @include("loader")
-    <nav class="redirect_dashboard">
+    <nav class="redirect_dashboard gap-5">
         <a href="/user">
             <span>Dashboard</span>
         </a>
-        <a href="/cars/list">
-            <span>Garage</span>
-        </a>
-        <a href="/">
-            <span>Home</span>
+        <a href="/communities">
+            <span>All communties</span>
         </a>
     </nav>
 
     <div class="garage">
         <div class="d-flex justify-content-center page-title">
             <h1>
-                Communities
+                {{ $brand }} - Communities
             </h1>
         </div>
-
-        <section class="filter-review-brand">
-            <div class="container d-flex justify-content-center">
-                <h3 style="font-family: Audiowide;">Filter by brand</h3>
-            </div>
-            <div class="container d-flex">
-                <form action="/communities/filter" method="GET">
-                    @csrf
-                    <div class="row g-3 mb-4">
-                        <div class="mb-5">
-                                <label class="mb-1" for="car_id">Select brand</label>
-                                <select name="brand" id="car_id" class="form-control" required>
-                                        @foreach($brands as $x)
-                                            <option value="{{ $x->brand }}">
-                                                    {{ $x->brand }}
-                                            </option>
-                                        @endforeach
-                                </select>
-                        </div>
-
-                        <div class="d-flex justify-content-center mt-3">
-                            <button type="submit" class="btn pt-2 pb-2 ps-3 pe-3 class submit_button">
-                                Filter
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
 
         <section class="cars">
             <div class="container d-flex flex-wrap gap-5">

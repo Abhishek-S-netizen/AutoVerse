@@ -31,6 +31,7 @@
 </head>
 
 <body>
+    @include("loader")
      <header>
         <div id="title_container" class="container d-flex">
             <h1 id="title">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {{ Auth::user()->name }} - Communities
+        Admin - Communities
     </title>
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
@@ -32,14 +32,20 @@
 <body onload="showGarage()">
     @include("loader")
     <nav class="redirect_dashboard">
-        <a href="/user">
+        <a href="/admin">
             <span>Dashboard</span>
         </a>
-        <a href="/cars/list">
-            <span>Garage</span>
+
+        <a href="/all-admin-orders">
+            <span>Live Orders</span>
         </a>
-        <a href="/">
-            <span>Home</span>
+
+        <a href="/all-admin-past-orders">
+            <span>Past Orders</span>
+        </a>
+
+        <a href="/all-admin-users">
+            <span>Users</span>
         </a>
     </nav>
 
@@ -55,7 +61,7 @@
                 <h3 style="font-family: Audiowide;">Filter by brand</h3>
             </div>
             <div class="container d-flex">
-                <form action="/communities/filter" method="GET">
+                <form action="/cars/list/filter" method="GET">
                     @csrf
                     <div class="row g-3 mb-4">
                         <div class="mb-5">
@@ -87,19 +93,12 @@
                         <div class="card-body">
                             <h5 class="card-title fs-4">{{ $x->brand }} {{ $x->model }} </h5>
                         </div>
-
                         <div class="d-flex align-items-center p-3">
-                            @if($rentedCarsID->contains($x->id))
-                                <a href="/communities/{{ $x->slug }}" class="add_rent">
-                                    <span>
-                                        <i class="fa-solid fa-car"></i> Join room
-                                    </span>
-                                </a>
-                            @else
-                                    <h6>
-                                        Please rent this vehicle or complete your tenure to unlock community facilities
-                                    </h6>
-                            @endif    
+                            <a href="/admin-all-communities/{{ $x->slug }}" class="add_rent">
+                                <span>
+                                    <i class="fa-solid fa-car"></i> Join room
+                                </span>
+                            </a>
                         </div>
                     </div>
                 @endforeach

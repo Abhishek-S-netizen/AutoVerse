@@ -28,10 +28,21 @@
 
     <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
 </head>
+
 <body onload="showGarage()">
+    @include("loader")
     <nav class="redirect_dashboard">
         <a href="/user">
-            <span>Back to dashboard</span>
+            <span>Dashboard</span>
+        </a>
+        <a href="/communities">
+            <span>Communities</span>
+        </a>
+        <a href="/cars/list">
+            <span>Garage</span>
+        </a>
+        <a href="/">
+            <span>Home</span>
         </a>
     </nav>
 
@@ -75,7 +86,7 @@
                             <input type="hidden" value="{{ $x->car->id }}" name="car_id_number">
                             <button class="remove_wishlist">
                                 <span>
-                                    <i class="fa-solid fa-heart text-danger"></i> Remove from wishlist
+                                    <i class="fa-solid fa-heart-circle-minus text-danger"></i> Remove from wishlist
                                 </span>
                             </button>   
                         </form> 

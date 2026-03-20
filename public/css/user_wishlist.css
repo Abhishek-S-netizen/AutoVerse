@@ -21,16 +21,25 @@ body {
     position: fixed;
     font-family: Audiowide;
     top: 0;
-    width: 100%;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    background: rgba(230, 230, 230, 0.5);
     backdrop-filter: blur(10px);
     z-index: 10;
+    top: 1rem;
+    border-radius: 2rem;
+    justify-content: space-around;
 }
 
 .form-card {
     border: none !important;
+}
+
+input {
+    border: solid 5px #171717;
 }
 
 .redirect_dashboard a {
@@ -95,6 +104,7 @@ body {
     background-color: #DEDCD9;
     transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
     border: none;
+    border-radius: 1rem;
 }
 
 .past_orders {
@@ -139,6 +149,20 @@ body {
 
 .service_card:hover img {
     transform: scale(1.04);
+}
+
+.delete_reply {
+    background-color: transparent;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.delete_reply:hover {
+    color: #38C498;
 }
 
 form {

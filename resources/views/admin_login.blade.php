@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    @include("loader")
     <div class="parallax" style="background-image: url('{{ asset('images/polestar_2_demo_three.jpg') }}')">
     @if($errors->any())
         <div class="alert alert-danger">
@@ -46,7 +47,7 @@
         </div>
 
         <div class="container d-flex justify-content-center mb-5 home_redirect">
-            <a href="/index">Home</a>
+            <a href="/">Home</a>
         </div>
 
         <div class="row mb-3 justify-content-center">

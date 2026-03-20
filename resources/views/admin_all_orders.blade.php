@@ -29,15 +29,28 @@
     <link rel="stylesheet" href="{{ asset('css/user_wishlist.css') }}">
 </head>
 <body onload="showGarage()">
+    @include("loader")
     <nav class="redirect_dashboard">
         <a href="/admin">
-            <span>Back to dashboard</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="/all-admin-past-orders">
+            <span>Past Orders</span>
+        </a>
+
+        <a href="/admin-all-communities">
+            <span>Communities</span>
+        </a>
+
+        <a href="/all-admin-users">
+            <span>Users</span>
         </a>
     </nav>
 
     <div class="garage">
         <div class="d-flex justify-content-center page-title">
-            <h1>Current Orders</h1>
+            <h1>Live Orders</h1>
         </div>
 
         <section class="cars">
@@ -58,7 +71,7 @@
                                         <br><br>
                                         <strong>Delivery location : </strong>{{ $x->delivery_location }}
                                         <br><br>
-                                        <strong>Status : {{ $x->status }}</strong>
+                                        <strong class="bg-dark text-white p-2 rounded-2">Status : {{ $x->status }}</strong>
                                     </p>
                                 </div>
                             </div>
@@ -70,7 +83,7 @@
                                     @csrf
                                     <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
                                     <button type="submit" class="return_car" 
-                                    @if($x->status != "pending") disabled  @endif>
+                                    @if($x->status != "pending") disabled style="opacity:0.7; cursor:not-allowed;" @endif>
                                         <span>
                                             <i class="fa-solid fa-circle-check"></i> Approve
                                         </span>
@@ -81,7 +94,7 @@
                                     @csrf
                                     <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
                                     <button type="submit" class="return_car"
-                                    @if($x->status != "approved") disabled @endif>
+                                    @if($x->status != "approved") disabled style="opacity:0.7; cursor:not-allowed;" @endif>
                                         <span>
                                             <i class="fa-solid fa-key"></i> Active
                                         </span>
@@ -92,7 +105,7 @@
                                     @csrf
                                     <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
                                     <button type="submit" class="return_car"
-                                    @if($x->status != 'active') disabled @endif>
+                                    @if($x->status != 'active') disabled style="opacity:0.7; cursor:not-allowed;" @endif>
                                         <span>
                                             <i class="fa-solid fa-flag-checkered"></i> Completed
                                         </span>

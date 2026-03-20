@@ -28,7 +28,8 @@
 </head>
 
 <body onload="animateIntro()">
-    <nav class="justify-content-center navbar_custom" data-bs-theme="dark">
+    @include("loader")
+    <nav class="justify-content-around navbar_custom" data-bs-theme="dark">
         <a href="/">
             <span>Home</span>
         </a>
@@ -40,7 +41,7 @@
         </a>
     </nav>
     <header id="home">
-        <div class="landing_page landing_page_electric" style="background-image: url('{{ asset('images/mountain_electric.jpg') }}')">
+        <div class="landing_page landing_page_electric" style="background-image: url('{{ asset('images/trees.jpg') }}')">
             <img src="{{ asset('images\Volvo_EC40.png') }}" alt="">
 
             <div class="d-flex landing_title landing_title_electric">

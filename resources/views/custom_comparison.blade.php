@@ -31,10 +31,11 @@
 </head>
 
 <body>
+    @include("loader")
     <header>
         <div id="title_container" class="container d-flex">
             <h1 id="title">
-                <span class="fs-6 d-flex gap-5 p-0 redirect_links">
+                <span class="fs-6 d-flex gap-5 mb-4 p-0 redirect_links">
                     <a href="/">Home</a>
                     <a href="/reviews">All Reviews</a>
                     <a href="/electric-cars">EVs</a>

@@ -28,7 +28,8 @@
 </head>
 
 <body onload="animateIntro()">
-    <nav class="justify-content-center navbar_custom" data-bs-theme="dark">
+    @include("loader")
+    <nav class="justify-content-around navbar_custom" data-bs-theme="dark">
         <a href="/">
             <span>Home</span>
         </a>
@@ -40,7 +41,7 @@
         </a>
     </nav>
     <header id="home">
-        <div class="landing_page" style="background-image: url('{{ asset('images/mountain.avif') }}')">
+        <div class="landing_page" style="background-image: url('{{ asset('images/trees_two.jpg') }}')">
             <div class="landing_img_superwrapper">
                 <div class="landing_img_wrapper">
                     <img src="{{ asset('images\Porsche_911_Carrera_4S.avif') }}" alt="">

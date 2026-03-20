@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    @include("loader")
     <nav class="redirect_reviews">
         <a href="/reviews">
             <span>All reviews</span>

@@ -337,5 +337,25 @@ class PageController extends Controller
         $rentals = $user->rentals()->latest()->get();
         return view("admin_rental_history",compact("rentals","user"));
     }
+
+    /********************************************************************************************** */
+
+    public function showAdminCommunities() {
+        $cars = Car::paginate(6);
+        $brands = Car::select("brand")->distinct()->get();
+        return view("admin_all_communities",compact("cars","brands"));
+    }
+
+    public function showCommunitiesFilter(Request $request) {
+        $request->validate([
+            "brand" => "required|exists:cars,brand"
+        ]);
+
+        $user = Auth::user();
+        $brand = $request->brand;
+        $cars = Car::where("brand",$brand)->paginate(6);
+        $rentedCarsID = $user->rentals()->where("status","completed")->pluck("car_id");
+        return view("user_communities_filtered",compact("cars","rentedCarsID","brand"));
+    }
 }
 

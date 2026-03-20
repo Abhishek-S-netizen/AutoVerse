@@ -50,6 +50,7 @@ Route::get('/electric-cars',[PageController::class,"showElectricCars"]);
 Route::get("/comparisons/{slug}",[ComparisonController::class, "show"]);
 Route::get('/reviews/{slug}', [ReviewController::class, 'show']);
 Route::get('/communities',[PageController::class,"showCommunities"])->middleware("auth");
+Route::get("/communities/filter",[PageController::class,"showCommunitiesFilter"])->middleware("auth");
 Route::get('/communities/{slug}', [CommunityController::class, 'show'])->middleware("auth");
 Route::post("/community-post", [CommunityController::class,"storePost"])->middleware("auth");
 Route::post("/community-reply", [CommunityController::class,"storeReply"])->middleware("auth");
@@ -84,6 +85,13 @@ Route::post("/admin/car-comparison",[AdminController::class,"storeComparison"])-
 Route::get("/all-admin-orders",[PageController::class,"showAllAdminOrders"])->middleware("admin");
 
 Route::get("/all-admin-past-orders",[PageController::class,"showAllAdminPastOrders"])->middleware("admin");
+
+Route::get("/admin-all-communities",[PageController::class,"showAdminCommunities"])->middleware("admin");
+Route::get("/admin-all-communities/{slug}",[CommunityController::class, "showAdminCarCommunity"])->middleware("admin");
+
+Route::post("/delete-admin-post",[CommunityController::class,"deleteAdminPost"])->middleware("admin");
+
+Route::post("/delete-admin-reply",[CommunityController::class,"deleteAdminReply"])->middleware("admin");
 
 Route::post("/approve-vehicle",[AdminController::class, "markApproved"])->middleware("admin");
 
