@@ -29,9 +29,7 @@ class AdminController extends Controller
         $admin = Admin::where('email', $request->email)->first();
 
         if (!$admin || !Hash::check($request->password, $admin->password)) {
-            return back()->withErrors([
-                'email' => 'Invalid admin credentials'
-            ]);
+            return back()->with('error', 'Invalid admin credentials');
         }
 
         $adminName = $admin->name;
@@ -41,7 +39,7 @@ class AdminController extends Controller
             "admin_id" => $admin->id,
         ]);
 
-        return redirect('/admin',compact("adminName"));
+        return redirect('/admin')->with('adminName',$adminName);
     }
 
     /******************************************************************************************* */
