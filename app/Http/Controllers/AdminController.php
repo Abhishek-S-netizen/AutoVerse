@@ -38,8 +38,8 @@ class AdminController extends Controller
         session([
             "admin_id" => $admin->id,
         ]);
-
-        return redirect('/admin')->with('adminName',$adminName);
+        
+        return redirect('/admin');
     }
 
     /******************************************************************************************* */

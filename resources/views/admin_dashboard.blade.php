@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ $adminName }}'s Dashboard</title>
+        <title>Admin Dashboard</title>
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
         <link href="{{ asset('css/bootstrap-5.3.8-dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -69,7 +69,7 @@
 
             <nav class="welcome_nav">
                 <h2>
-                    Welcome, {{ $adminName }}
+                    Welcome, Admin
                 </h2>
             </nav>
         </div>
