@@ -41,7 +41,7 @@ class AdminController extends Controller
             "admin_id" => $admin->id,
         ]);
 
-        return redirect('/admin');
+        return redirect('/admin',"adminName");
     }
 
     /******************************************************************************************* */

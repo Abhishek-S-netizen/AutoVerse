@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Dashboard</title>
+        <title>{{ $adminName }}'s Dashboard</title>
         <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
         <link href="{{ asset('css/bootstrap-5.3.8-dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -69,7 +69,7 @@
 
             <nav class="welcome_nav">
                 <h2>
-                    Welcome, {{ session("admin_id")->name }}
+                    Welcome, {{ $adminName }}
                 </h2>
             </nav>
         </div>
