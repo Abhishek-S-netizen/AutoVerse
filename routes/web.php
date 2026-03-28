@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 Route::get("/",[PageController::class,"showIndex"]);
 Route::get("/signup",[PageController::class,"showSignUp"]);
 Route::get("/login",[PageController::class,"showLogin"])->name("login");
+Route::get("/admin-register",[PageController::class,"showAdminRegister"]);
 Route::get("/admin-login",[PageController::class,"showAdminLogin"]);
 Route::get("/user",[PageController::class,"showUserDashboard"])->middleware("auth");
 Route::get("/admin",[PageController::class,"showAdminDashboard"])->middleware("admin");
@@ -72,6 +73,7 @@ Route::post("/admin-delete-details",[AdminController::class,"deleteDetails"])->m
 // This lets us reference the route easily in Blade templates, redirects, or URL generation
 // without hardcoding the actual path (e.g., route('login') instead of '/login').
 Route::post("/register",[AuthController::class,"register"])->name("register");
+Route::post("/register-admin",[AdminController::class,"registerAdmin"])->name("registerAdmin");
 Route::post("/login",[AuthController::class,"login"])->name("login_account");
 Route::post("/logout",[AuthController::class,"logout"])->name("logout");
 

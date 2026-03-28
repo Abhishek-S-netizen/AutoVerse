@@ -43,9 +43,9 @@
 
     <header id="home">
         <div class="landing_page" style="background-image: url('{{ asset('images/mountain_electric.jpg') }}')">
-            <img class="one" src="{{ asset('images\BMW.png') }}" alt="">
-            <img class="two" src="{{ asset('images\Volvo.png') }}" alt="">
-            <img class="three" src="{{ asset('images\VQ.png') }}" alt="">
+            <img class="one" src="{{ asset('images/BMW.png') }}" alt="">
+            <img class="two" src="{{ asset('images/Volvo.png') }}" alt="">
+            <img class="three" src="{{ asset('images/VQ.png') }}" alt="">
 
             <div class="d-flex landing_title">
                 <h1 style="color:#38C498">

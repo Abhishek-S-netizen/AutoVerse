@@ -13,7 +13,6 @@ use App\Models\Car;
 use App\Models\Comparison;
 use App\Models\User;
 use App\Models\Rental;
-use App\Models\CommunityController;
 
 class PageController extends Controller
 {
@@ -356,6 +355,10 @@ class PageController extends Controller
         $cars = Car::where("brand",$brand)->paginate(6);
         $rentedCarsID = $user->rentals()->where("status","completed")->pluck("car_id");
         return view("user_communities_filtered",compact("cars","rentedCarsID","brand"));
+    }
+
+    public function showAdminRegister() {
+        return view("admin_register");
     }
 }
 

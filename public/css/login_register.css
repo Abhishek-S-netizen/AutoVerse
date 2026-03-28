@@ -33,8 +33,7 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 3rem;
-    width: 50%;
+    width: 40%;
     border-radius: 1.5rem;
     color: white;
 }
@@ -42,7 +41,7 @@ form {
 input {
     border-radius: 1rem !important;
     border: none;
-    height: 3rem;
+    height: 2.5rem;
     margin-bottom: 1rem;
 }
 

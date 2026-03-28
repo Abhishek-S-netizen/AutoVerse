@@ -95,7 +95,7 @@
     </section>
 
     <section class="reviews">
-        <div class="container d-flex mt-5 gap-5 flex-wrap">
+        <div class="container reviews-container gap-5">
 
             @foreach($cars as $x)
                 <div class="card service_card mb-4">

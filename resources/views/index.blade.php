@@ -43,7 +43,7 @@
 
         @guest 
             <a href="/signup">
-                <span>Login / Sign Up</span>
+                <span>Login</span>
             </a>
         @endguest
 
@@ -92,7 +92,7 @@
     </div>
 
     <section id="cta_services" class="cta_buttons_section">
-        <div class="cta_buttons d-flex justify-content-center">
+        <div class="cta_buttons d-flex container justify-content-center">
             <a href="/electric-cars">
                 <span><i class="fa-solid fa-bolt"></i> EVs</span>
             </a>
@@ -121,7 +121,7 @@
         <section class="top_picks d-flex">
             <div class="top_picks_container">
                 <div class="image_container">
-                    <img src="{{ asset('images\BMW_2_series_Gran_Coupe.jpg') }}" alt="">
+                    <img src="{{ asset('images/BMW_2_series_Gran_Coupe.jpg') }}" alt="">
                     <h5 class="car_name">BMW 2 Series Gran Coupe</h5>
                 </div>
                 <div>
@@ -140,13 +140,13 @@
                         <span>Read the full review</span> <i class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
                 <div class="image_container">
-                    <img src="{{ asset('images\Hyundai_Tucson.jpg') }}" alt="">
+                    <img src="{{ asset('images/Hyundai_Tucson.jpg') }}" alt="">
                     <h5 class="car_name">Hyundai Tucson</h5>
                 </div>
 
 
                 <div class="image_container">
-                    <img src="{{ asset('images\Kia_EV3.jpg') }}" alt="">
+                    <img src="{{ asset('images/Kia_EV3.jpg') }}" alt="">
                     <h5 class="car_name">Kia EV3</h5>
                 </div>
                 <div class="right-aligned">
@@ -168,35 +168,74 @@
                 </h1>
             </div>
 
-            <div class="d-flex flex-wrap gap-5 justify-content-center">
-                <div class="card service_card span_card">
-                    <img src="{{ asset('images\kiaEV3.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title fs-4">Kia EV3</h5>
-                        <a href="/reviews/kia-ev3" class="d-inline-flex align-items-center gap-2">
-                            Review <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
+            <!-- <div class="container p-0">
+                <div class="d-flex flex-wrap justify-content-around gap-5">
+                    <div class="card service_card span_card">
+                        <img src="{{ asset('images\kiaEV3.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">Kia EV3</h5>
+                            <a href="/reviews/kia-ev3" class="d-inline-flex align-items-center gap-2">
+                                Review <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="card service_card span_card">
+                        <img src="{{ asset('images\HyundaiSantaFe.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">Hyundai Santa Fe</h5>
+                            <a href="/reviews/hyundai-santa-fe" class="d-inline-flex align-items-center gap-2">
+                                Review <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card service_card span_card">
+                        <img src="{{ asset('images\AlpineA290.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">Alpine A290</h5>
+                            <a href="/reviews/alpine-a290" class="d-inline-flex align-items-center gap-2">
+                                Review <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div> -->
 
-                <div class="card service_card span_card">
-                    <img src="{{ asset('images\HyundaiSantaFe.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title fs-4">Hyundai Santa Fe</h5>
-                        <a href="/reviews/hyundai-santa-fe" class="d-inline-flex align-items-center gap-2">
-                            Review <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="container popular-reviews-container gap-5">
 
-                <div class="card service_card span_card">
-                    <img src="{{ asset('images\AlpineA290.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title fs-4">Alpine A290</h5>
-                        <a href="/reviews/alpine-a290" class="d-inline-flex align-items-center gap-2">
-                            Review <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>
+                        <div class="card service_card span_card">
+                            <img src="{{ asset('images/kiaEV3.jpg') }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Kia EV3</h5>
+                                <a href="/reviews/kia-ev3" class="d-inline-flex align-items-center gap-2">
+                                    Review <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card service_card span_card">
+                            <img src="{{ asset('images/HyundaiSantaFe.jpg') }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Hyundai Santa Fe</h5>
+                                <a href="/reviews/hyundai-santa-fe" class="d-inline-flex align-items-center gap-2">
+                                    Review <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="card service_card span_card">
+                            <img src="{{ asset('images/AlpineA290.jpg') }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Alpine A290</h5>
+                                <a href="/reviews/alpine-a290" class="d-inline-flex align-items-center gap-2">
+                                    Review <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+
                 </div>
             </div>
 
@@ -218,7 +257,7 @@
         <section class="featured-rentals">
             <div class="featured_rentals_container">
                 <div class="image_container">
-                    <img src="{{ asset('images\Hyundai_Ioniq_5.jpg') }}" alt="">
+                    <img src="{{ asset('images/Hyundai_Ioniq_5.jpg') }}" alt="">
                     <h5 class="car_name">Hyundai Ioniq 5</h5>
                 </div>
                 <div>
@@ -245,13 +284,13 @@
                     </a>
                 </div>
                 <div class="image_container">
-                    <img src="{{ asset('images\VW_golf.jpg') }}" alt="">
+                    <img src="{{ asset('images/VW_golf.jpg') }}" alt="">
                     <h5 class="car_name">Volkswagon Golf</h5>
                 </div>
 
 
                 <div class="image_container">
-                    <img src="{{ asset('images\Alpine_A290.jpg') }}" alt="">
+                    <img src="{{ asset('images/Alpine_A290.jpg') }}" alt="">
                     <h5 class="car_name">Alpine A290</h5>
                 </div>
                 <div class="right-aligned">

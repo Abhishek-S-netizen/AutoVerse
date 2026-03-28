@@ -38,7 +38,7 @@ class AdminController extends Controller
 
         // Store admin session
         session([
-            "admin" => $admin,
+            "admin_id" => $admin->id,
         ]);
 
         return redirect('/admin');
@@ -100,7 +100,7 @@ class AdminController extends Controller
         );
 
         $folderName = "car_" . $car->id;
-        $folderPath = public_path("images/reviews/$folderName");
+        $folderPath = storage_path("app/public/images/reviews/$folderName");
 
         if(!file_exists($folderPath)) {
             mkdir($folderPath, 0777, true);
@@ -122,13 +122,13 @@ class AdminController extends Controller
             'title' => $request->title,
             'rating' => $request->rating,
 
-            'hero_image' => "images/reviews/$folderName/$hero_image_name",
+            'hero_image' => "storage/images/reviews/$folderName/$hero_image_name",
             'intro_text' => $request->intro_text,
 
-            'interior_image' => "images/reviews/$folderName/$interior_image_name",
+            'interior_image' => "storage/images/reviews/$folderName/$interior_image_name",
             'interior_text' => $request->interior_text,
 
-            'drive_image' => "images/reviews/$folderName/$drive_image_name",
+            'drive_image' => "storage/images/reviews/$folderName/$drive_image_name",
             'drive_text' => $request->drive_text,
 
             'safety_text' => $request->safety_text,
@@ -173,7 +173,7 @@ class AdminController extends Controller
 
             // Use the same folder structure as reviews
             $folderName = "car_" . $car->id;
-            $folderPath = public_path("images/reviews/$folderName");
+            $folderPath = storage_path("app/public/images/reviews/$folderName");
 
             if (!file_exists($folderPath)) {
                 mkdir($folderPath, 0777, true);
@@ -181,7 +181,7 @@ class AdminController extends Controller
 
             $imageName = 'highlight_' . time() . '.' . $image->extension();
             $image->move($folderPath, $imageName);
-            $imagePath = "images/reviews/$folderName/$imageName";
+            $imagePath = "storage/images/reviews/$folderName/$imageName";
         }
 
         CarHighlight::create([
@@ -241,7 +241,7 @@ class AdminController extends Controller
     /******************************************************************************************* */
 
     public function logout(Request $request) {
-        $request->session()->forget('admin');
+        $request->session()->forget('admin_id');
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
@@ -364,7 +364,7 @@ class AdminController extends Controller
         $car = Car::findOrFail($request->car_delete_id);
 
         $folderName = "car_" . $car->id;
-        $path = public_path("images/reviews/$folderName");
+        $path = storage_path("app/public/images/reviews/$folderName");
 
         if(File::exists($path)) {
             File::deleteDirectory($path);
@@ -436,5 +436,21 @@ class AdminController extends Controller
         $user->delete();
 
         return redirect()->back()->with("success", "User removed successfully");
+    }
+
+    public function registerAdmin(Request $request) {
+        $request->validate([
+            "name" => "required|string|max:255",
+            "email" => "required|email|max:255",
+            "password" => "required|string|min:8|confirmed"
+        ]);
+
+        $admin = Admin::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => Hash::make($request->password)
+        ]);
+
+        return redirect("/");
     }
 }

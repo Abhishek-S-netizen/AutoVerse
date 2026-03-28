@@ -210,6 +210,11 @@ header {
     color: #38C498;
 }
 
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 select {
     background-color: #333333 !important;
     color: #38C498 !important;
@@ -224,7 +229,7 @@ select {
 }
 
 .service_card {
-    width: 25rem !important;
+    width: 100% !important;
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: 1rem !important;
@@ -342,6 +347,10 @@ footer a:hover {
         padding-bottom: 4rem;
     }
 
+    .reviews-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .landing_page {
         height: auto;
         padding: 5rem 0;
@@ -436,6 +445,10 @@ footer a:hover {
 
     .navbar_custom.shrink {
         width: 70%;
+    }
+
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .navbar_custom a {
