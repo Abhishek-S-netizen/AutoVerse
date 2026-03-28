@@ -28,7 +28,7 @@
 
 <body>
     @include("loader")
-    <div class="parallax" style="background-image: url('{{ asset('images/polestar_2_demo_three.jpg') }}')">
+    <div class="parallax" style="background: url('{{ asset('images/polestar_2_demo_three.jpg') }}') center/cover no-repeat">
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -43,11 +43,7 @@
         @csrf
 
         <div class="container mb-3 d-flex justify-content-center">
-            <h1 style="font-family:Audiowide;">AutoVerse - Admin Login</h1>
-        </div>
-
-        <div class="container d-flex justify-content-center mb-5 home_redirect">
-            <a href="/">Home</a>
+            <h1 style="font-family:Audiowide;">Admin Login</h1>
         </div>
 
         <div class="row mb-3 justify-content-center">
@@ -62,7 +58,12 @@
             </div>
         </div>
 
-        <button type="submit" class="btn mt-5 fw-bolder">Sign In</button>
+        <button type="submit" class="btn mt-4 fw-bolder">Sign In</button>
+
+        <div class="container d-flex justify-content-center mt-5 home_redirect gap-5 text-center">
+            <a href="/">Home</a>
+            <a href="/login">User Login</a>
+        </div>
     </form>
 
     </div>

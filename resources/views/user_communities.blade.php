@@ -80,7 +80,7 @@
         </section>
 
         <section class="cars">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="garage-container gap-5">
                 @foreach($cars as $x)
                     <div class="card service_card span_card">
                         <img src="{{ asset($x->highlight->image_path) }}" class="card-img-top" alt="...">

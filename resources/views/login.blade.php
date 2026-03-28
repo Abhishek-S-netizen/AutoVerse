@@ -35,7 +35,7 @@
 
 <body>
     @include("loader")
-    <div class="parallax" style="background-image: url('{{ asset('images/polestar_2_demo_two.jpg') }}')">
+    <div class="parallax" style="background: url('{{ asset('images/polestar_2_demo_two.jpg') }}') center/cover no-repeat">
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -56,11 +56,7 @@
         @csrf
         
         <div class="container mb-3 d-flex justify-content-center">
-            <h1 style="font-family:Audiowide;">AutoVerse - User login</h1>
-        </div>
-
-        <div class="container d-flex justify-content-center mb-5 home_redirect gap-5 text-center">
-            <a href="/">Home</a>
+            <h1 style="font-family:Audiowide;">User login</h1>
         </div>
 
         <div class="row mb-3 justify-content-center">
@@ -79,10 +75,11 @@
             <a href="/forgot-password">Forgot password</a>
         </div>
 
-        <button type="submit" class="btn mt-5 fw-bolder">Sign In</button>
+        <button type="submit" class="btn mt-4 fw-bolder">Sign In</button>
 
         <div class="container d-flex justify-content-center mt-5 home_redirect gap-5 text-center">
-            <a href="/admin-login">Administrator</a>
+            <a href="/">Home</a>
+            <a href="/admin-login" class="opacity-50">Administrator</a>
         </div>
     </form>
     </div>

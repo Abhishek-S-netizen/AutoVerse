@@ -48,7 +48,7 @@
 
     <div class="garage">
         <section class="container my-5 filter-review-brand">
-            <div class="card form-card">
+            <div class="card form-card discussion-form">
                 <div class="card-body p-4">
 
                     <h4 class="mb-4 fw-bold">
@@ -100,18 +100,19 @@
                         <div class="card-body">
                             <h3 class="card-title fs-4">{{ $x->post_title }}</h3>
                             <h5 class="card-title fs-6">{{ $x->user->name }} </h5>
-                            <a href="/user-profile/{{ $x->user->id }}" target="_blank">Check out {{ $x->user->name }}'s profile</a>
+                            <a id="user-profile-link" href="/user-profile/{{ $x->user->id }}" target="_blank">Check out {{ $x->user->name }}'s profile</a>
                             <p class="mt-3">
                                 {{ $x->post }}
                             </p>
-                        </div>
-                        <div class="mt-3 ps-3 border-start">
-                            @foreach($x->replies as $reply)
-                                <div class="mb-2">
-                                    <strong>{{ $reply->user->name }}</strong>
-                                    <p class="mb-1">{{ $reply->reply }}</p>
-                                </div>
-                            @endforeach
+
+                            <div class="mt-3">
+                                @foreach($x->replies as $reply)
+                                    <div class="mb-2">
+                                        <strong>{{ $reply->user->name }}</strong>
+                                        <p class="mb-1">{{ $reply->reply }}</p>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
 
                         <form action="/community-reply" method="POST" class="mt-3">

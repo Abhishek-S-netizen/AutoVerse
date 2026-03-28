@@ -77,19 +77,18 @@
                                         <br><br>
                                         Fuel economy : {{ $x->car->fuel_economy }}
                                     </p>
+                                    <form action="/remove-user-wishlist" method="POST" class="remove-wishlist-form">
+                                        @csrf
+                                        <input type="hidden" value="{{ $x->car->id }}" name="car_id_number">
+                                        <button class="remove_wishlist">
+                                            <span>
+                                                <i class="fa-solid fa-heart-circle-minus text-danger"></i> Remove from wishlist
+                                            </span>
+                                        </button>   
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        
-                    <form action="/remove-user-wishlist" method="POST">
-                            @csrf
-                            <input type="hidden" value="{{ $x->car->id }}" name="car_id_number">
-                            <button class="remove_wishlist">
-                                <span>
-                                    <i class="fa-solid fa-heart-circle-minus text-danger"></i> Remove from wishlist
-                                </span>
-                            </button>   
-                        </form> 
                     </div>
                 @endforeach
             </div>

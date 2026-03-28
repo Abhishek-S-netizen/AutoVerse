@@ -52,7 +52,7 @@
         </div>
 
         <section class="cars">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="past-orders-container gap-5">
                 @foreach($rentedPast as $x)
                     <div class="card service_card past_orders span_card">
                         <img src="{{ asset($x->car->highlight->image_path) }}" class="card-img-top" alt="...">
@@ -61,21 +61,8 @@
                             <h5>
                                 <strong>Status : </strong> {{ $x->status }}
                             </h5>
-                        </div>
 
-                        @if($x->status != "cancelled" && $x->status != "completed")
-                            <form action="/return-vehicle" method="POST">
-                                @csrf
-                                <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
-                                <button type="submit" class="return_car">
-                                    <span>
-                                        <i class="fa-solid fa-circle-xmark"></i> Cancel
-                                    </span>
-                                </button>
-                            </form>
-                        @endif
-
-                        <form action="/invoice/{{ $x->id }}" method="GET">
+                            <form action="/invoice/{{ $x->id }}" method="GET" class="invoice-form">
                             @csrf
                             <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
                             <button class="return_car">
@@ -84,6 +71,7 @@
                                 </span>
                             </button>
                         </form> 
+                        </div>
                     </div>
                 @endforeach
             </div>

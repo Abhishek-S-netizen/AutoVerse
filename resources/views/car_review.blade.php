@@ -55,7 +55,7 @@
     </header>
 
     <section id="hero_image_section">
-        <div id="hero_image_container" class="container d-flex justify-content-center gap-5">
+        <div id="hero_image_container" class="container d-flex justify-content-around gap-5">
             <div>
                 <img id="hero_image" src="{{ asset($carDetail->hero_image) }}" alt="{{ $car->brand }} {{ $car->model }}">
             </div>
@@ -63,7 +63,6 @@
             <div id="car_meta_info" class="container d-flex flex-column gap-4">
                 <div id="car_rating" class="card meta_card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Rating</h5>
                         <p class="card-text">
                             @for($i = 0; $i < $carDetail->rating; $i++)
                                 <i style="color:#38C498" class="fa-solid fa-star"></i>
@@ -74,7 +73,7 @@
                     </div>
                 </div>
 
-                <div class="card meta_card" style="width: 18rem;">
+                <div class="card meta_card">
                         <div class="card-body">
                         @guest
                             <a href="/signup" class="login_link">
@@ -106,31 +105,28 @@
                             @endif
                         @endauth  
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="specs">
-        <div class="specs-container">
-            <p class="d-inline-flex gap-3">
-                <a class="btn spec_button feature_spec_button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span>Show specifications</span>
-                </a>
-            </p>
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body" style="background-color:inherit;">
-                    <p>
-                        Number of seats : {{ $car->seating }}
-                        <br><br>
-                        Boot space, seats up : {{ $car->bootspace }}
-                        <br><br>
-                        Exterior dimensions (L x W x H) : {{ $car->exterior_dimensions }}
-                        <br><br>
-                        Available fuel types : {{ $car->fuel_type }}
-                        <br><br>
-                        Fuel economy : {{ $car->fuel_economy }}
-                    </p>
+                    <div class="specs-container ms-3 mt-5">
+                        <p class="d-inline-flex gap-3">
+                            <a class="btn spec_button feature_spec_button" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <span>Show specifications</span>
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body" style="background-color:inherit;">
+                                <p>
+                                    Number of seats : {{ $car->seating }}
+                                    <br><br>
+                                    Boot space, seats up : {{ $car->bootspace }}
+                                    <br><br>
+                                    Exterior dimensions (L x W x H) : {{ $car->exterior_dimensions }}
+                                    <br><br>
+                                    Available fuel types : {{ $car->fuel_type }}
+                                    <br><br>
+                                    Fuel economy : {{ $car->fuel_economy }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,16 +197,6 @@
     </section>
 
     <footer>
-       <!--- <div class="container d-flex logo">
-            <img src="{{ asset('images/AutoVerse_Logo.png') }}" alt="">
-        </div> 
-        <div class="container d-flex name_logo">
-            <img src="{{ asset('images/AutoVerse_Logo.png') }}" alt="">
-            <h3>
-                AutoVerse
-            </h3>
-        </div> -->
-
         <div class="container d-flex gap-4 mt-3 justify-content-between">
             <div class="d-flex gap-4">
                 <a href="/reviews">Reviews</a>
@@ -221,6 +207,9 @@
                     Back to top
                 </a>
             </div>
+        </div>
+
+        <div class="container mt-5 justify-content-between">
             <div class="d-flex gap-5">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -230,28 +219,20 @@
 
         <div class='container d-flex mt-5 justify-content-between'>
             <div>
-                <h6><strong>Contact us : </strong></h6>
+                <h6><strong>Contact and follow us : </strong></h6>
                 <div class="d-flex gap-5">
                     <h6><i class="fa-solid fa-envelope"></i> Email : autoverse@gmail.com</h6>
                     <h6><i class="fa-solid fa-phone"></i> Phone : 8756438902</h6>
-                </div>
-            </div>
-
-            <div>
-                <h6><strong>Follow us on : </strong></h6>
-                <div class="d-flex gap-5">
-                    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i> YouTube</a>
                 </div>
             </div>
         </div>
 
         <div class="container d-flex justify-content-between mt-5">
-            <h6>Developed by Abhishek Subramanian</h6>
             <h6>
-                <i class="fa-solid fa-copyright"></i> AutoVerse Ltd. All Rights Reserved
-            </h6>
+                 <i class="fa-solid fa-copyright"></i> AutoVerse Ltd. All Rights Reserved | Developed by Abhishek Subramanian</h6>
         </div>
     </footer>
 

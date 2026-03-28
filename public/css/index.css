@@ -147,13 +147,13 @@ header {
 .landing_page img {
     display: block;
     margin: auto;
-    width: 80%;
+    width: 75%;
     transform: translateX(0);
     transition: transform 1.5s ease;
 }
 
 .landing_page img.zoom {
-    transform: scale(1.19);
+    transform: scale(1.15);
 }
 
 .landing_page img.shrink {
@@ -209,7 +209,7 @@ header {
     background-color: #38C498;
     border-radius: 0.5rem;
     text-align: center;
-    width: 15rem;
+    min-width: 20%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     line-height: 2rem;
@@ -252,7 +252,7 @@ header {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 90vh;
 }
 
 .about_parallax::before {
@@ -268,15 +268,14 @@ header {
 }
 
 .about_parallax div {
-    position: absolute;
+    position: relative;
     font-family: Oxanium;
     color: white;
     text-align: justify;
-    top: 50%;
-    left: 10%;
     width: 80%;
     z-index: 5;
-    transform: translateY(-50%);
+    margin: auto;
+    padding-top: 7rem;
 
 }
 
@@ -797,11 +796,11 @@ footer a:hover {
     /* ================= LANDING IMAGE (PORSCHE FIX) ================= */
     .landing_img_superwrapper {
         width: 55%;
-        top: 55%;
+        top: 30%;
     }
 
     .landing_page img {
-        width: 70%;
+        width: 60%;
         max-width: 750px;
         height: auto;
     }
@@ -824,22 +823,5 @@ footer a:hover {
     .featured_rentals_container {
         max-width: 1400px;
         margin: 0 auto;
-    }
-
-    /* ================= FOOTER FIX (YOUR MAIN ISSUE) ================= */
-    footer .container {
-        max-width: 1400px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    footer .container>div {
-        min-width: 300px;
-    }
-
-    footer h6 {
-        white-space: nowrap;
     }
 }

@@ -7,6 +7,11 @@ body {
     padding: 0;
     font-family: Zain;
     transition: background-color 0.5s ease;
+    background-color: #DEDCD9;
+}
+
+#clock {
+    color: #38C498;
 }
 
 .dashboard-content {
@@ -89,38 +94,156 @@ body.dark-mode {
     background-color: #171717;
 }
 
+.user-features-container {
+    padding-top: 1rem;
+}
+
+.user-features {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    /* background-color: #171717; */
+    background: rgba(23, 23, 23, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+    position: fixed;
+    left: 50%;
+    z-index: 50;
+    transform: translateX(-50%);
+}
+
+.user-features.dark-mode-nav {
+    background: rgba(51, 51, 51, 0.5);
+    backdrop-filter: blur(10px);
+
+}
+
+.user-features a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.user-features a::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    transition: top 0.3s ease, left 0.3s ease;
+}
+
+.user-features a:hover::before {
+    top: 0;
+    left: 0;
+}
+
+.user-features a:hover {
+    color: #171717;
+}
+
+.user-features a * {
+    position: relative;
+}
+
+.user-features button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.user-features button::before {
+    position: absolute;
+    content: "";
+    border-radius: 0.5rem;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #38C498;
+    transition: top 0.3s ease, left 0.3s ease;
+}
+
+.user-features button:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.user-features button:hover {
+    color: #171717;
+}
+
+.welcome-message h2.welcome-message-dark-mode {
+    color: #38C498;
+}
+
+.user-features button * {
+    position: relative;
+}
+
 .user_functions_section {
     font-family: Oxanium;
-    padding-top: 9rem;
-    padding-left: 16rem;
+    padding-top: 10rem;
+}
+
+.welcome-message {
+    padding-bottom: 2rem;
 }
 
 .profile_section {
     margin-top: 5rem;
-    padding-left: 16rem;
     padding-bottom: 5rem;
 }
 
 .user_functions_div {
     display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.welcome-message {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: flex-start;
 }
 
 .wishlist_card,
 .order_card {
-    position: relative;
     overflow: hidden;
-    background-color: #DEDCD9;
+    background-color: #333333;
     padding: 2rem;
-    width: 40%;
+    width: 30%;
     border-radius: 1.5rem;
-    color: #171717;
+    color: #38C498;
 
     transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
 }
 
 .wishlist_card.dark-mode-wishlist {
     background-color: #333333;
-    color: #DEDCD9;
+    color: #b2b1ae;
 }
 
 .order_card.dark-mode-order {
@@ -131,7 +254,7 @@ body.dark-mode {
 .wishlist_card a,
 .order_card a {
     text-decoration: none;
-    color: #333333;
+    color: #DEDCD9;
     margin-top: 1rem;
     font-weight: bolder;
     transition: color 0.5s ease;
@@ -161,7 +284,7 @@ body.dark-mode {
 
 .wishlist_card:hover,
 .order_card:hover {
-    transform: scale(0.95);
+    transform: scale(1.05);
 }
 
 .icon-link-hover {
@@ -174,6 +297,7 @@ body.dark-mode {
 
 .profile_card {
     width: 92%;
+    background-color: #b2b1ae;
     position: relative;
     overflow: hidden;
     padding: 2rem;
@@ -183,7 +307,7 @@ body.dark-mode {
 }
 
 .profile_card.dark-mode-profile {
-    background-color: transparent;
+    background-color: #333333;
     color: #DEDCD9;
 }
 
@@ -261,6 +385,10 @@ body.dark-mode {
 
 .card_title {
     font-weight: bolder;
+    color: #38C498
+}
+
+.profile_card_title {
     color: #171717;
 }
 
@@ -313,7 +441,7 @@ body.dark-mode {
     }
 
     #clock {
-        display: none;
+        color: #38C498;
     }
 
     .nav_custom .navbar_custom h2 {

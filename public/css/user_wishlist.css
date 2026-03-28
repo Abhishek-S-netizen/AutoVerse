@@ -5,7 +5,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    /*background-color: #504f4f;*/
+    background-color: #DEDCD9;
 }
 
 .garage {
@@ -20,22 +20,33 @@ body {
 .redirect_dashboard {
     position: fixed;
     font-family: Audiowide;
-    top: 0;
     width: 60%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     padding: 0.5rem;
-    background: rgba(230, 230, 230, 0.5);
-    backdrop-filter: blur(10px);
+    background: rgba(21, 21, 21, 0.8);
+    backdrop-filter: blur(5px);
     z-index: 10;
     top: 1rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     justify-content: space-around;
 }
 
 .form-card {
     border: none !important;
+}
+
+.garage-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.past-orders-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
 }
 
 input {
@@ -48,7 +59,7 @@ input {
     border-radius: 0.5rem;
     padding: 0.5rem;
     text-decoration: none;
-    color: #171717;
+    color: #DEDCD9;
     transition: color 0.3s ease;
 }
 
@@ -101,7 +112,7 @@ input {
     font-family: Oxanium;
     width: 25rem;
     overflow: hidden;
-    background-color: #DEDCD9;
+    background-color: #504f4f;
     transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
     border: none;
     border-radius: 1rem;
@@ -117,13 +128,22 @@ input {
     margin: auto;
 }
 
+.invoice-form,
+.remove-wishlist-form {
+    padding: 0;
+}
+
+.discussion-form {
+    background-color: #DEDCD9;
+}
+
 .service_card img {
     transition: transform 0.5s ease;
 }
 
 .service_card div {
     background-color: black;
-    background-color: #DEDCD9;
+    background-color: #cbcac7;
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 0.3rem;
 }
@@ -142,13 +162,17 @@ input {
     color: #38C498;
 }
 
+#user-profile-link:hover {
+    color: white;
+}
+
 .service_card:hover {
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
-    transform: scale(1.05);
+    /*box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6); */
+    transform: scale(1.04);
 }
 
 .service_card:hover img {
-    transform: scale(1.04);
+    transform: scale(0.95);
 }
 
 .delete_reply {
@@ -290,4 +314,43 @@ form .add_wishlist:hover::before,
 .submit_button:hover {
     background-color: #171717;
     color: #38C498;
+}
+
+/* ===============================
+   MOBILE (0px – 768px)
+   =============================== */
+@media (max-width: 768px) {
+
+    .redirect_dashboard {
+        top: 0;
+        border-radius: 0rem;
+        width: 100% !important;
+    }
+
+    .garage-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .past-orders-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* ===============================
+   TABLET (769px – 1024px)
+   =============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .garage-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .past-orders-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
