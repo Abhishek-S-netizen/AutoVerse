@@ -65,17 +65,16 @@
     </header>
 
     <section class="filter-review-brand">
-        <div class="container d-flex">
+        <div class="d-flex justify-content-center">
             <h1 style="font-family: Audiowide;">Filter reviews by brand</h1>
         </div>
-        <div class="container d-flex">
+        <div class="d-flex justify-content-center">
             <form action="/filter-reviews" method="GET">
                                 @csrf
 
                 <div class="row g-3 mb-4">
-                    <div class="mb-5">
-                            <label class="mb-1" for="car_id">Select brand</label>
-                            <select name="brand" id="car_id" class="form-control" required>
+                    <div class="mb-3">
+                            <select name="brand" id="car_id" class="form-control mt-4" required>
                                     @foreach($allBrands as $x)
                                         <option value="{{ $x->brand }}">
                                                 {{ $x->brand }}
@@ -84,7 +83,7 @@
                             </select>
                     </div>
 
-                    <div class="d-flex justify-content-start mt-3">
+                    <div class="d-flex justify-content-center">
                         <button type="submit" class="btn pt-2 pb-2 ps-3 pe-3 class submit_button">
                             Filter
                         </button>
@@ -95,7 +94,7 @@
     </section>
 
     <section class="reviews">
-        <div class="container reviews-container gap-5">
+        <div class="reviews-container gap-5">
 
             @foreach($cars as $x)
                 <div class="card service_card mb-4">
@@ -119,7 +118,7 @@
     </div>
     
     <footer>
-        <div class="container d-flex gap-4 mt-3 justify-content-between">
+        <div class="d-flex gap-4 mt-3 justify-content-between">
             <div class="d-flex gap-4">
                 <a href="/reviews">Reviews</a>
                 <a href="/electric-cars">EVs</a>
@@ -131,7 +130,7 @@
             </div>
         </div>
 
-        <div class="container mt-5 justify-content-between">
+        <div class="mt-5 justify-content-between">
             <div class="d-flex gap-5">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -139,10 +138,10 @@
             </div>
         </div>
 
-        <div class='container d-flex mt-5 justify-content-between'>
+        <div class='d-flex flex-wrap mt-5 justify-content-between'>
             <div>
                 <h6><strong>Contact and follow us : </strong></h6>
-                <div class="d-flex gap-5">
+                <div class="d-flex flex-wrap gap-5">
                     <h6><i class="fa-solid fa-envelope"></i> Email : autoverse@gmail.com</h6>
                     <h6><i class="fa-solid fa-phone"></i> Phone : 8756438902</h6>
                     <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
@@ -152,7 +151,7 @@
             </div>
         </div>
 
-        <div class="container d-flex justify-content-between mt-5">
+        <div class="d-flex justify-content-between mt-5">
             <h6>
                  <i class="fa-solid fa-copyright"></i> AutoVerse Ltd. All Rights Reserved | Developed by Abhishek Subramanian</h6>
         </div>

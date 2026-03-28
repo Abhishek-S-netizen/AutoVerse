@@ -67,17 +67,11 @@
                 </h1>
             </div>
         </div>
-
-        <div class="tagline container">
-            <h2 class="text-center">
-                Explore. Compare. Decide.
-            </h2>
-        </div>
     </header>
 
-    <div id="about" class="about_parallax" style="background-image:url('{{ asset('images/Cupra_Logo.avif') }}')">
+    <section id="about_content" class="about_content_section">
         <div>
-            <p class="fs-5">
+            <p class="fs-4">
                 Finding the right car shouldn’t feel complicated—it should feel exciting. That’s why AutoVerse brings everything you need into one sleek, easy-to-use platform. From detailed specs and verified reviews to powerful side‑by‑side comparisons, AutoVerse makes car shopping smarter, faster, and more enjoyable.
                 <br><br>
                 No barriers, no hassle—jump right in and explore without creating an account. Want more? Registered users can build personalized wishlists, manage their profiles, and even rent vehicles. Every addition is carefully reviewed by our team, so you can trust that the information you see is accurate, reliable, and relevant.
@@ -89,10 +83,10 @@
                 </strong>
             </p>
         </div>
-    </div>
+    </section>
 
     <section id="cta_services" class="cta_buttons_section">
-        <div class="cta_buttons d-flex container justify-content-between">
+        <div class="cta_buttons justify-content-between">
             <a href="/electric-cars">
                 <span><i class="fa-solid fa-bolt"></i> EVs</span>
             </a>
@@ -110,6 +104,9 @@
             </a>
         </div>
     </section>
+
+     <div id="about" class="about_parallax" style="background-image:url('{{ asset('images/Cupra_Logo.avif') }}')">
+    </div>
 
     <section class="top-picks-wrapper">
         <div class="section_title" style="background-color:#DEDCD9;">
@@ -160,93 +157,6 @@
         </section>
     </section>
 
-    <section class="popular-reviews-wrapper">
-        <section class="popular_review">
-            <div class="section_title" style="background-color:#DEDCD9;">
-                <h1 style="font-family: Audiowide;">
-                    <i class="fa-solid fa-chart-line"></i> Popular Car Reviews
-                </h1>
-            </div>
-
-            <!-- <div class="container p-0">
-                <div class="d-flex flex-wrap justify-content-around gap-5">
-                    <div class="card service_card span_card">
-                        <img src="{{ asset('images\kiaEV3.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-4">Kia EV3</h5>
-                            <a href="/reviews/kia-ev3" class="d-inline-flex align-items-center gap-2">
-                                Review <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div class="card service_card span_card">
-                        <img src="{{ asset('images\HyundaiSantaFe.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-4">Hyundai Santa Fe</h5>
-                            <a href="/reviews/hyundai-santa-fe" class="d-inline-flex align-items-center gap-2">
-                                Review <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card service_card span_card">
-                        <img src="{{ asset('images\AlpineA290.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-4">Alpine A290</h5>
-                            <a href="/reviews/alpine-a290" class="d-inline-flex align-items-center gap-2">
-                                Review <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="container popular-reviews-container gap-5">
-
-                        <div class="card service_card span_card">
-                            <img src="{{ asset('images/kiaEV3.jpg') }}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4">Kia EV3</h5>
-                                <a href="/reviews/kia-ev3" class="d-inline-flex align-items-center gap-2">
-                                    Review <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="card service_card span_card">
-                            <img src="{{ asset('images/HyundaiSantaFe.jpg') }}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4">Hyundai Santa Fe</h5>
-                                <a href="/reviews/hyundai-santa-fe" class="d-inline-flex align-items-center gap-2">
-                                    Review <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="card service_card span_card">
-                            <img src="{{ asset('images/AlpineA290.jpg') }}" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title fs-4">Alpine A290</h5>
-                                <a href="/reviews/alpine-a290" class="d-inline-flex align-items-center gap-2">
-                                    Review <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                </div>
-            </div>
-
-            <div class="container d-flex reviews_cta title_phone">
-                <a class="fs-3" href="/reviews" style="font-family: Audiowide;">
-                    <span>More reviews</span>
-                </a>
-            </div>
-        </section>
-    </section>
-    
     <section class="featured-rentals-wrapper">
         <div class="section_title" style="background-color:#DEDCD9;">
             <h1 style="font-family: Audiowide;">
@@ -308,8 +218,61 @@
         </section>
     </section>
 
+
+    <section class="popular-reviews-wrapper">
+        <section class="popular_review">
+            <div class="section_title" style="background-color:#DEDCD9;">
+                <h1 style="font-family: Audiowide;">
+                    <i class="fa-solid fa-chart-line"></i> Popular Car Reviews
+                </h1>
+            </div>
+
+            <div class="popular-reviews-container gap-5">
+
+                        <div class="card service_card span_card">
+                            <img src="{{ asset('images/kiaEV3.jpg') }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Kia EV3</h5>
+                                <a href="/reviews/kia-ev3" class="d-inline-flex align-items-center gap-2">
+                                    Review <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card service_card span_card">
+                            <img src="{{ asset('images/HyundaiSantaFe.jpg') }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Hyundai Santa Fe</h5>
+                                <a href="/reviews/hyundai-santa-fe" class="d-inline-flex align-items-center gap-2">
+                                    Review <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="card service_card span_card">
+                            <img src="{{ asset('images/AlpineA290.jpg') }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title fs-4">Alpine A290</h5>
+                                <a href="/reviews/alpine-a290" class="d-inline-flex align-items-center gap-2">
+                                    Review <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="d-flex reviews_cta title_phone">
+                <a class="fs-3" href="/reviews" style="font-family: Audiowide;">
+                    <span>More reviews</span>
+                </a>
+            </div>
+        </section>
+    </section>
+
     <footer>
-        <div class="container d-flex gap-4 mt-3 justify-content-between">
+        <div class="d-flex gap-4 mt-3 justify-content-between">
             <div class="d-flex gap-4">
                 <a href="/reviews">Reviews</a>
                 <a href="/electric-cars">EVs</a>
@@ -321,7 +284,7 @@
             </div>
         </div>
 
-        <div class="container mt-5 justify-content-between">
+        <div class="mt-5 justify-content-between">
             <div class="d-flex gap-5">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -329,10 +292,10 @@
             </div>
         </div>
 
-        <div class='container d-flex mt-5 justify-content-between'>
+        <div class='d-flex flex-wrap mt-5 justify-content-between'>
             <div>
                 <h6><strong>Contact and follow us : </strong></h6>
-                <div class="d-flex gap-5">
+                <div class="d-flex flex-wrap gap-5">
                     <h6><i class="fa-solid fa-envelope"></i> Email : autoverse@gmail.com</h6>
                     <h6><i class="fa-solid fa-phone"></i> Phone : 8756438902</h6>
                     <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
@@ -342,7 +305,7 @@
             </div>
         </div>
 
-        <div class="container d-flex justify-content-between mt-5">
+        <div class="d-flex justify-content-between mt-5">
             <h6>
                  <i class="fa-solid fa-copyright"></i> AutoVerse Ltd. All Rights Reserved | Developed by Abhishek Subramanian</h6>
         </div>

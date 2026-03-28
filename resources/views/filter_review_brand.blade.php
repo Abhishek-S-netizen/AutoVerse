@@ -56,7 +56,7 @@
     </section>
     
     <footer>
-        <div class="container d-flex gap-4 mt-3 justify-content-between">
+        <div class="d-flex gap-4 mt-3 justify-content-between">
             <div class="d-flex gap-4">
                 <a href="/reviews">Reviews</a>
                 <a href="/electric-cars">EVs</a>
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="container mt-5 justify-content-between">
+        <div class="mt-5 justify-content-between">
             <div class="d-flex gap-5">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -76,10 +76,10 @@
             </div>
         </div>
 
-        <div class='container d-flex mt-5 justify-content-between'>
+        <div class='d-flex flex-wrap mt-5 justify-content-between'>
             <div>
                 <h6><strong>Contact and follow us : </strong></h6>
-                <div class="d-flex gap-5">
+                <div class="d-flex flex-wrap gap-5">
                     <h6><i class="fa-solid fa-envelope"></i> Email : autoverse@gmail.com</h6>
                     <h6><i class="fa-solid fa-phone"></i> Phone : 8756438902</h6>
                     <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <div class="container d-flex justify-content-between mt-5">
+        <div class="d-flex justify-content-between mt-5">
             <h6>
                  <i class="fa-solid fa-copyright"></i> AutoVerse Ltd. All Rights Reserved | Developed by Abhishek Subramanian</h6>
         </div>

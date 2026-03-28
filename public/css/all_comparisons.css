@@ -309,18 +309,24 @@ select {
 
 footer {
     font-family: Oxanium;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
     background-color: #38C498;
-    padding: 1rem;
 }
 
 footer a {
-    text-decoration: none;
     color: #171717;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
     color: white;
+}
+
+footer div {
+    width: 100% !important;
 }
 
 @media (max-width: 768px) {

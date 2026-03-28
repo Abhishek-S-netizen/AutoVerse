@@ -142,11 +142,9 @@ header {
 }
 
 .landing_page_electric img {
-    position: absolute;
+    position: relative;
     width: 80%;
     top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 11;
 }
 
@@ -213,6 +211,8 @@ header {
 .reviews-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin: 2rem;
+    justify-items: center;
 }
 
 select {
@@ -229,7 +229,7 @@ select {
 }
 
 .service_card {
-    width: 100% !important;
+    width: 90% !important;
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: 1rem !important;
@@ -286,18 +286,24 @@ select {
 
 footer {
     font-family: Oxanium;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
     background-color: #38C498;
-    padding: 1rem;
 }
 
 footer a {
-    text-decoration: none;
     color: #171717;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover {
     color: white;
+}
+
+footer div {
+    width: 100% !important;
 }
 
 /* =========================================
@@ -487,5 +493,16 @@ footer a:hover {
 
     footer {
         font-size: 0.95rem;
+    }
+}
+
+@media (min-width:1920px) {
+    .landing_page_electric img {
+        position: absolute;
+        width: 80%;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 11;
     }
 }

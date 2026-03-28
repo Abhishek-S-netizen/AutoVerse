@@ -96,7 +96,7 @@ nav a:hover::before {
 
 header {
     padding-bottom: 10rem;
-    background: linear-gradient(#171717, #DEDCD9);
+    background: linear-gradient(#171717 50%, #DEDCD9);
 }
 
 .landing_page {
@@ -192,14 +192,16 @@ header {
 
 .cta_buttons_section {
     font-family: Audiowide;
-    padding-top: 8rem;
-    padding-bottom: 10rem;
+    padding-top: 1rem;
     text-align: center;
-    background: linear-gradient(white, #DEDCD9);
 }
 
 .cta_buttons {
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    margin: 5rem;
+    gap: 2rem;
 }
 
 .cta_buttons a {
@@ -209,7 +211,7 @@ header {
     background-color: #38C498;
     border-radius: 0.5rem;
     text-align: center;
-    min-width: 20%;
+    min-width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     line-height: 2rem;
@@ -257,7 +259,15 @@ header {
 
 .about_parallax::before {
     position: absolute;
-    content: "";
+    content: "Explore. Compare. Decide. \A\A A modern way to discover, and understand cars without the noise.";
+    white-space: pre-line;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-family: Audiowide;
     top: 0;
     left: 0;
     right: 0;
@@ -267,16 +277,15 @@ header {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.about_parallax div {
-    position: relative;
+.about_content_section {
+    padding-top: 6rem;
+    background-color: #DEDCD9;
     font-family: Oxanium;
-    color: white;
-    text-align: justify;
-    width: 80%;
-    z-index: 5;
-    margin: auto;
-    padding-top: 7rem;
+}
 
+.about_content_section div {
+    max-width: 90%;
+    margin: auto;
 }
 
 .top-picks-wrapper div,
@@ -314,6 +323,10 @@ header {
     transform: translateX(0);
 }
 
+.top-picks-wrapper {
+    padding-top: 10rem;
+}
+
 .top_picks_container,
 .featured_rentals_container {
     display: grid;
@@ -326,6 +339,7 @@ header {
 .popular-reviews-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 2rem;
 }
 
 .top_picks_container p,
@@ -396,7 +410,7 @@ header {
 
 .service_card {
     font-family: Oxanium;
-    width: 100%;
+    width: 95%;
     overflow: hidden;
     background-color: #333333;
     border-radius: 1rem !important;
@@ -456,6 +470,7 @@ header {
 
 .reviews_cta {
     margin-top: 5rem;
+    margin-left: 2rem;
 }
 
 .reviews_cta a {
@@ -509,7 +524,9 @@ header {
 
 footer {
     font-family: Oxanium;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
     background-color: #38C498;
 }
 
@@ -523,9 +540,8 @@ footer a:hover {
     color: white;
 }
 
-.name_logo img {
-    width: 5%;
-    height: auto;
+footer div {
+    width: 100% !important;
 }
 
 /* =========================================
@@ -932,11 +948,30 @@ footer a:hover {
     }
 
     /* ================= ABOUT SECTION TEXT FIX ================= */
-    .about_parallax div {
-        width: 60%;
-        margin: auto;
-        font-size: 1.1rem;
-        line-height: 1.7;
+    .about_parallax {
+        position: relative;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+    }
+
+    .about_parallax::before {
+        position: absolute;
+        content: "“A modern way to discover, compare, and understand cars without the noise.”";
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: white;
+        font-size: 0.5rem;
+        font-family: Audiowide;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
     }
 
     /* ================= GRID CONTAINERS ================= */
@@ -944,5 +979,12 @@ footer a:hover {
     .featured_rentals_container {
         max-width: 1400px;
         margin: 0 auto;
+    }
+
+    footer {
+        font-family: Oxanium;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: #38C498;
     }
 }
