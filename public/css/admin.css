@@ -6,6 +6,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: Zain;
+    background-color: #DEDCD9;
 }
 
 .nav_custom .navbar_custom {
@@ -168,7 +169,7 @@ body {
 .order_card {
     position: relative;
     overflow: hidden;
-    background-color: #DEDCD9;
+    background-color: #b2b1ae;
     padding: 1rem;
     width: 40%;
     border-radius: 1.5rem;

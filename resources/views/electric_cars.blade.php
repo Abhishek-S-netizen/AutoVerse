@@ -33,7 +33,7 @@
         <a href="/">
             <span>Home</span>
         </a>
-        <a href="/signup">
+        <a href="/user">
             <span>Rent a car</span>
         </a>
         <a href="/comparisons">

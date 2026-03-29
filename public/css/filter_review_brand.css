@@ -118,6 +118,13 @@ header div {
     transform: scale(1.05);
 }
 
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 2rem;
+    justify-items: center;
+}
+
 footer {
     font-family: Oxanium;
     padding-top: 1rem;
@@ -166,6 +173,10 @@ footer div {
         padding-bottom: 3rem;
     }
 
+    .reviews-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .service_card {
         width: 90% !important;
         margin-left: auto;
@@ -182,5 +193,64 @@ footer div {
     footer {
         text-align: left;
         font-size: 0.9rem;
+    }
+}
+
+
+/* ===============================
+   TABLET (769px – 1024px)
+   =============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* ===== NAVBAR ===== */
+    .navbar_custom {
+        gap: 2.5rem;
+        width: 80%;
+    }
+
+    .navbar_custom.shrink {
+        width: 70%;
+    }
+
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar_custom a {
+        font-size: 0.95rem;
+    }
+
+    /* ===== LANDING ===== */
+    .landing_title h1 {
+        font-size: 4.5rem;
+    }
+
+    .landing_page img {
+        width: 80%;
+        top: 60%;
+    }
+
+    .tagline h3 {
+        font-size: 1.3rem;
+    }
+
+    /* ===== FILTER ===== */
+    .filter-review-brand form {
+        width: 60%;
+    }
+
+    /* ===== CARDS ===== */
+    .service_card {
+        width: 20rem !important;
+    }
+
+    /* ===== SPACING ===== */
+    .reviews {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    footer {
+        font-size: 0.95rem;
     }
 }

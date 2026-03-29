@@ -109,7 +109,7 @@
                 <span><i class="fa-solid fa-scale-balanced"></i> Comparisons</span>
             </a>
 
-            <a href="/signup">
+            <a href="/user">
                 <span><i class="fa-solid fa-circle-check"></i> Rent</span>
             </a>
         </div>
@@ -177,35 +177,35 @@
         <section class="featured-rentals">
             <div class="featured_rentals_container">
                 <div class="image_container">
-                    <img src="{{ asset('images/Hyundai_Ioniq_5.jpg') }}" alt="">
-                    <h5 class="car_name">Hyundai Ioniq 5</h5>
+                    <img src="{{ asset('images/Skoda_Kodiaq.jpg') }}" alt="">
+                    <h5 class="car_name">Skoda Kodiaq</h5>
                 </div>
                 <div>
                     <p>
-                        The Hyundai Ioniq 5 is a strikingly modern electric crossover that reinvents what an EV can be. With its bold, angular design, spacious interior, and advanced tech features, the Ioniq 5 delivers a refined ride without sacrificing performance. Its long-range battery and rapid charging capability make it ideal for both everyday commuting and long-distance travel.
+                        The Škoda Kodiaq is a bold and practical SUV that blends European sophistication with everyday versatility. With its clean, muscular design, spacious cabin, and premium build quality, the Kodiaq offers a refined driving experience suited for both city life and long journeys. Its powerful yet efficient engine options, advanced safety features, and optional all-wheel-drive capability make it a dependable companion for families and adventure seekers alike.
                     </p>
-                    <a href="#">
+                    <a href="/reviews/skoda-kodiaq">
                         <span>Read the full review</span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
-                    <a href="#">
+                    <a href="/user">
                         <span>Rent </span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
 
                 <div class="right-aligned">
                     <p>
-                        The Volkswagen Golf is the benchmark hatchback that blends everyday usability with refined performance. Known for its solid build quality, comfortable ride, and well-balanced handling, the Golf is perfect for both busy city roads and open highways. With a thoughtfully designed interior, modern tech features, and a reputation for reliability, the Golf delivers a premium driving experience without losing its practical edge.
+                        The Fiat Grande Panda Electric is a charming and forward-thinking EV that blends retro-inspired design with modern urban practicality. With its compact footprint, quirky styling, and cleverly designed interior, it offers a fun yet functional driving experience tailored for city life. Its efficient electric powertrain, and intuitive tech features, make it an appealing choice for drivers seeking an affordable and stylish EV.
                     </p>
                     <a href="#">
                         <span>Read the full review</span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
-                    <a href="#">
-                    <span>Rent </span> <i class="fa-solid fa-arrow-right-long"></i>
+                     <a href="/user">
+                        <span>Rent </span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
                 <div class="image_container">
-                    <img src="{{ asset('images/VW_golf.jpg') }}" alt="">
-                    <h5 class="car_name">Volkswagon Golf</h5>
+                    <img src="{{ asset('images/Fiat_Panda.jpg') }}" alt="">
+                    <h5 class="car_name">Fiat Grande Panda Electric</h5>
                 </div>
 
 
@@ -217,10 +217,10 @@
                     <p>
                         The Alpine A290 is a compact electric hot hatch that channels pure motorsport spirit into a modern, urban-friendly package. With its aggressive styling, sharp handling, and instant electric torque, it delivers an engaging drive that feels lively and responsive at every turn. Inside, a sporty cabin and advanced tech complete the experience with a futuristic edge. 
                     </p>
-                    <a href="#">
+                    <a href="/reviews/alpine-a290">
                         <span>Read the full review</span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
-                    <a href="#">
+                    <a href="/user">
                         <span>Rent</span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
