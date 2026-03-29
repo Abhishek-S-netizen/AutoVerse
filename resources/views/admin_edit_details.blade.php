@@ -118,10 +118,6 @@
                             <!-- HERO IMAGE -->
                             <h5 class="mt-5 mb-3 text-secondary">Hero Section</h5>
 
-                            <div class="mb-4">
-                                <label class="form-label">Hero Image</label>
-                                <input type="file" class="form-control" name="hero_image">
-                            </div>
 
                             <div class="mb-4">
                                 <label class="form-label">Introduction</label>
@@ -130,11 +126,6 @@
 
                             <!-- INTERIOR -->
                             <h5 class="mt-5 mb-3 text-secondary">Interior</h5>
-                            
-                             <div class="col-md-6">
-                                <label class="form-label">Interior Image</label>
-                                <input type="file" class="form-control" name="interior_image">
-                            </div>
 
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
@@ -145,10 +136,7 @@
 
                             <!-- DRIVE -->
                             <h5 class="mt-5 mb-3 text-secondary">Drive Experience</h5>
-                            <div class="col-md-6">
-                                <label class="form-label">Drive Image</label>
-                                <input type="file" class="form-control" name="drive_image">
-                            </div>
+        
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label class="form-label">Drive Description</label>
@@ -253,11 +241,6 @@
                             <div class="mb-3">
                                 <label>Key Features</label>
                                 <textarea name="key_features" class="form-control">{{ $car->highlight->key_features }}</textarea>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label">Hero Image</label>
-                                <input type="file" class="form-control" name="highlight_image">
                             </div>
                         </div>
 

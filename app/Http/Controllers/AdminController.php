@@ -309,22 +309,6 @@ class AdminController extends Controller
             'safety_text' => $request->safety_text,
         ]);
 
-        if ($request->hasFile('hero_image')) { 
-            $hero_name = "hero_" . time() . "." . $request->hero_image->extension(); 
-            $request->hero_image->move($folderPath, $hero_name); 
-            $car->carDetail()->update([ 'hero_image' => "storage/images/reviews/$folderName/$hero_name" ]); 
-        } 
-        
-        if ($request->hasFile('interior_image')) { 
-            $name = "interior_" . time() . "." . $request->interior_image->extension(); 
-            $request->interior_image->move($folderPath, $name); 
-            $car->carDetail()->update([ 'interior_image' => "storage/images/reviews/$folderName/$name" ]); 
-        } 
-        if ($request->hasFile('drive_image')) { 
-            $name = "drive_" . time() . "." . $request->drive_image->extension(); 
-            $request->drive_image->move($folderPath, $name); 
-            $car->carDetail()->update([ 'drive_image' => "storage/images/reviews/$folderName/$name" ]); 
-        }
         return redirect()->back()->with('success', 'Car review updated successfully!');
     }
 
@@ -374,23 +358,6 @@ class AdminController extends Controller
             'best_for' => $request->best_for,
             'key_features' => $request->key_features,
         ]);
-
-        if ($request->hasFile('highlight_image')) { 
-            $image = $request->file('highlight_image'); 
-            // Use the same folder structure as reviews
-            $folderName = "car_" . $car->id; 
-            $folderPath = storage_path("app/public/images/reviews/$folderName"); 
-            
-            if (!file_exists($folderPath)) { 
-                mkdir($folderPath, 0777, true); 
-            } 
-            
-            $imageName = 'highlight_' . time() . '.' . $image->extension(); 
-            $image->move($folderPath, $imageName); 
-            $imagePath = "storage/images/reviews/$folderName/$imageName";
-            $car->highlight()->update([ 'image_path' => "storage/images/reviews/$folderName/$imageName" ]);
-        }
-
         return redirect()->back()->with('success', 'Highlight updated successfully!');
     }
 
