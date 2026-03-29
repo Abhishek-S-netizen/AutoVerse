@@ -196,7 +196,7 @@
                     <p>
                         The Fiat Grande Panda Electric is a charming and forward-thinking EV that blends retro-inspired design with modern urban practicality. With its compact footprint, quirky styling, and cleverly designed interior, it offers a fun yet functional driving experience tailored for city life. Its efficient electric powertrain, and intuitive tech features, make it an appealing choice for drivers seeking an affordable and stylish EV.
                     </p>
-                    <a href="#">
+                    <a href="/reviews/fiat-grande-panda-electric">
                         <span>Read the full review</span> <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                      <a href="/user">
