@@ -283,36 +283,6 @@
 
     <div class="dashboard-content">
         <div class="nav_custom">
-            <!-- <nav class="navbar_custom">
-                <h2>AutoVerse</h2>
-                <span id="clock" class="fs-5"></span>
-                <a href="/">
-                    <span><i class="fa-solid fa-house fs-6"></i> Home</span>
-                </a>
-                <a href="/cars/list">
-                    <span><i class="fa-solid fa-warehouse"></i> Garage</span>
-                </a>    
-                <a href="/communities">
-                    <span><i class="fa-solid fa-comments"></i> Communities</span>
-                </a>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit">
-                        <span>
-                            <i class="fa-solid fa-right-from-bracket"></i> Logout
-                        </span>
-                    </button>
-                </form>
-            </nav> -->
-
-            <!--<nav class="welcome_nav">
-                <h2>
-                    Welcome, {{ Auth::user()->name }}
-                </h2>
-                <span id="clock" class="fs-5"></span>
-            </nav>
-        </div> -->
-
         <div class="user-features-container">
             <nav class="user-features">
                 <a href="/">
@@ -357,7 +327,7 @@
                         </h3>
                         
                         <a class="icon-link icon-link-hover" href="/my-wishlist">
-                            View wishlisted cars
+                            View wishlist
                             <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
                                 <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                             </svg>
@@ -414,8 +384,8 @@
         </section>
 
         <section class="profile_section">
-            <div class="container d-flex ">
-                <div class="container d-flex flex-column gap-5 profile_card">
+            <div class="d-flex ">
+                <div class="d-flex flex-column gap-5 profile_card">
                     <div class="container d-flex">
                         <h2 class="profile_card_title">
                             <i class="fa-solid fa-address-card"></i> Profile

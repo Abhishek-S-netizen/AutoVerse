@@ -34,7 +34,7 @@
         <a href="#home">
             <span>Home</span>
         </a>
-        <a href="#about">
+        <a href="#about_content">
             <span>About</span>
         </a>
         <a href="#cta_services">
@@ -68,10 +68,20 @@
             </div>
         </div>
     </header>
+    
+    <div class="discover-autoverse">
+        <h4>
+            <a href="#about_content">DISCOVER AUTOVERSE <br> <i class="fa-solid fa-angles-down arrow-discover"></i></a>
+        </h4>
+    </div>
+    <div class="image-break">
+        <img src="{{ asset('images/Volvo_interior.avif') }}" alt="Volvo Interior">
+        <div id="gradient"></div>
+    </div>
 
     <section id="about_content" class="about_content_section">
         <div>
-            <p class="fs-4">
+            <p class="fs-5">
                 Finding the right car shouldn’t feel complicated—it should feel exciting. That’s why AutoVerse brings everything you need into one sleek, easy-to-use platform. From detailed specs and verified reviews to powerful side‑by‑side comparisons, AutoVerse makes car shopping smarter, faster, and more enjoyable.
                 <br><br>
                 No barriers, no hassle—jump right in and explore without creating an account. Want more? Registered users can build personalized wishlists, manage their profiles, and even rent vehicles. Every addition is carefully reviewed by our team, so you can trust that the information you see is accurate, reliable, and relevant.

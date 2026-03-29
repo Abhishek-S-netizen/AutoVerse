@@ -141,12 +141,12 @@ header {
     z-index: 11;
 }
 
-.landing_page_electric img {
+/*.landing_page_electric img {
     position: relative;
     width: 80%;
     top: 25%;
     z-index: 11;
-}
+} */
 
 .landing_title {
     position: absolute;
@@ -160,17 +160,8 @@ header {
     transition: top 1.5s ease, opacity 1.5s ease;
 }
 
-.landing_title_electric {
-    top: 80%;
-}
-
 .landing_title.show-landing-title {
     top: 40%;
-    opacity: 1;
-}
-
-.landing_title_electric.show-landing-title {
-    top: 30%;
     opacity: 1;
 }
 
@@ -493,16 +484,5 @@ footer div {
 
     footer {
         font-size: 0.95rem;
-    }
-}
-
-@media (min-width:1920px) {
-    .landing_page_electric img {
-        position: absolute;
-        width: 80%;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 11;
     }
 }

@@ -216,11 +216,13 @@ body.dark-mode {
 }
 
 .user_functions_div {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     width: 80%;
     margin: auto;
-    justify-content: space-between;
 }
+
 
 .welcome-message {
     display: flex;
@@ -234,7 +236,7 @@ body.dark-mode {
     overflow: hidden;
     background-color: #333333;
     padding: 2rem;
-    width: 30%;
+    width: 100%;
     border-radius: 1.5rem;
     color: #38C498;
 
@@ -296,7 +298,8 @@ body.dark-mode {
 }
 
 .profile_card {
-    width: 92%;
+    margin: auto;
+    width: 80%;
     background-color: #b2b1ae;
     position: relative;
     overflow: hidden;

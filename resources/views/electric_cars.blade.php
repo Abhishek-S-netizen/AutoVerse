@@ -42,7 +42,7 @@
     </nav>
     <header id="home">
         <div class="landing_page landing_page_electric" style="background-image: url('{{ asset('images/trees.jpg') }}')">
-            <img src="{{ asset('images/Volvo_EC40.png') }}" alt="">
+            <img src="{{ asset('images/Porsche_Taycan_Turbo.avif') }}" alt="">
 
             <div class="d-flex landing_title landing_title_electric">
                 <h1 style="color:#38C498">

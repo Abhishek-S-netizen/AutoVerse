@@ -101,10 +101,6 @@ body.dark-mode {
     padding-bottom: 5rem;
 }
 
-.user_functions_div {
-    display: flex;
-}
-
 .wishlist_card,
 .order_card {
     position: relative;
@@ -173,7 +169,7 @@ body.dark-mode {
 }
 
 .profile_card {
-    width: 92%;
+    width: 80%;
     position: relative;
     overflow: hidden;
     padding: 2rem;
