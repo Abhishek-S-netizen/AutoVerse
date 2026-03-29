@@ -45,8 +45,10 @@
 
     <div class="garage">
         <div class="d-flex justify-content-center page-title">
-            <h1>
+            <h1 class="text-center">
                 Communities
+                <br>
+                <span class="fs-5">Please rent a vehicle or complete your tenure to unlock community facilities</span>
             </h1>
         </div>
 
@@ -86,20 +88,17 @@
                         <img src="{{ asset($x->highlight->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title fs-4">{{ $x->brand }} {{ $x->model }} </h5>
-                        </div>
-
-                        <div class="d-flex align-items-center p-3">
                             @if($rentedCarsID->contains($x->id))
-                                <a href="/communities/{{ $x->slug }}" class="add_rent">
+                                <a href="/communities/{{ $x->slug }}">
                                     <span>
-                                        <i class="fa-solid fa-car"></i> Join room
+                                        <i class="fa-solid fa-car text-success"></i> Join room
                                     </span>
                                 </a>
                             @else
                                     <h6>
-                                        Please rent this vehicle or complete your tenure to unlock community facilities
+                                        <i class="fa-solid fa-lock text-danger"></i> Locked
                                     </h6>
-                            @endif    
+                            @endif 
                         </div>
                     </div>
                 @endforeach

@@ -54,9 +54,9 @@
         </div>
 
         <section class="cars">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="garage-container gap-5">
                 @foreach($users as $x)
-                    <div class="card service_card span_card">
+                    <div class="card user-card span_card">
                         <div class="card-body">
                             <h5 class="card-title fs-4">
                                 <i class="fa-solid fa-user"></i> {{ $x->name }}
@@ -73,7 +73,7 @@
                             </div>
                         </div>
 
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center user-details">
                             <form action="/remove-user" method="POST" onsubmit=
                             "return confirmDeleteUser()">
                                 @csrf

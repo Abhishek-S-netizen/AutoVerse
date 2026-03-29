@@ -58,42 +58,26 @@
                 @foreach($cars as $x)
                     <div class="card service_card span_card">
                         <img src="{{ asset($x->highlight->image_path) }}" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <div class="card-body rounded-0">
                             <h5 class="card-title fs-4">{{ $x->brand }} {{ $x->model }} </h5>
                             <a href="#" class="d-inline-flex align-items-center gap-2">
                                 ₹{{ $x->rent_price }} / day
                             </a>
-                        </div>
-
-                        <div class="specs-container">
-                            <div>
-                                <div class="card-body" style="background-color:inherit;">
-                                    <p>
-                                        Number of seats : {{ $x->seating }}
-                                        <br><br>
-                                        Boot space, seats up : {{ $x->bootspace }}
-                                        <br><br>
-                                        Exterior dimensions (L x W x H) : {{ $x->exterior_dimensions }}
-                                        <br><br>
-                                        Available fuel types : {{ $x->fuel_type }}
-                                        <br><br>
-                                        Fuel economy : {{ $x->fuel_economy }}
-                                    </p>
-                                </div>
-                            </div>
+                            <p>
+                                Number of seats : {{ $x->seating }}
+                                <br><br>
+                                Boot space, seats up : {{ $x->bootspace }}
+                                <br><br>
+                                Exterior dimensions (L x W x H) : {{ $x->exterior_dimensions }}
+                                <br><br>
+                                Available fuel types : {{ $x->fuel_type }}
+                                <br><br>
+                                Fuel economy : {{ $x->fuel_economy }}
+                            </p>
                         </div>
 
                         <div class="d-flex align-items-center">
                             @if($rentedCars->contains($x->id))
-                                <!--<form action="/my-orders" method="POST">
-                                    @csrf
-                                    <input type="hidden" value="{{ $x->id }}" name="car_id_number">
-                                    <button class="return_car">
-                                        <span>
-                                            <i class="fa-solid fa-rotate-left"></i> Cancel
-                                        </span>
-                                    </button>
-                                </form>-->
                                 <a href="/my-orders" class="ps-3">
                                     <span>
                                         <i class="fa-solid fa-car"></i> Check in Orders

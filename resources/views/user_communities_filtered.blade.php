@@ -54,9 +54,6 @@
                         <img src="{{ asset($x->highlight->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title fs-4">{{ $x->brand }} {{ $x->model }} </h5>
-                        </div>
-
-                        <div class="d-flex align-items-center p-3">
                             @if($rentedCarsID->contains($x->id))
                                 <a href="/communities/{{ $x->slug }}" class="add_rent">
                                     <span>
@@ -65,9 +62,9 @@
                                 </a>
                             @else
                                     <h6>
-                                        Please rent this vehicle or complete your tenure to unlock community facilities
+                                        <i class="fa-solid fa-lock text-danger"></i> Locked
                                     </h6>
-                            @endif    
+                            @endif 
                         </div>
                     </div>
                 @endforeach

@@ -89,6 +89,7 @@ Route::get("/all-admin-orders",[PageController::class,"showAllAdminOrders"])->mi
 Route::get("/all-admin-past-orders",[PageController::class,"showAllAdminPastOrders"])->middleware("admin");
 
 Route::get("/admin-all-communities",[PageController::class,"showAdminCommunities"])->middleware("admin");
+Route::get("/admin-all-communities/filter",[PageController::class,"showAdminFilteredCommunities"])->middleware("admin");
 Route::get("/admin-all-communities/{slug}",[CommunityController::class, "showAdminCarCommunity"])->middleware("admin");
 
 Route::post("/delete-admin-post",[CommunityController::class,"deleteAdminPost"])->middleware("admin");

@@ -55,9 +55,9 @@
         </div>
 
         <section class="cars">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="garage-container gap-5">
                 @foreach($rentals as $x)
-                    <div class="card service_card span_card">
+                    <div class="card service_card span_card" style="background-color:#cbcac7">
                         <div class="card-body">
                             <h5 class="card-title fs-4">{{ $x->car->brand }} {{ $x->car->model }} </h5>
                             <hr>

@@ -213,7 +213,7 @@ header {
     }
 
     50% {
-        transform: translateY(15px);
+        transform: translateY(10px);
     }
 }
 

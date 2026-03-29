@@ -94,9 +94,9 @@
         </section>
 
         <section class="cars">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="garage-container gap-5">
                 @foreach($posts as $x)
-                    <div class="card service_card span_card">
+                    <div class="card service_card span_card" style="background-color:#cbcac7">
                         <div class="card-body">
                             <h3 class="card-title fs-4">{{ $x->post_title }}</h3>
                             <h5 class="card-title fs-6">{{ $x->user->name }} </h5>

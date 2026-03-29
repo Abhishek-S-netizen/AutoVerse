@@ -52,7 +52,7 @@
         </div>
 
         <section class="cars">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="garage-container gap-5">
                 @foreach($rented as $x)
                     <div class="card service_card span_card">
                         <img src="{{ asset($x->car->highlight->image_path) }}" class="card-img-top" alt="...">
@@ -61,29 +61,31 @@
                             <h5>
                                 <strong>Status : </strong> {{ $x->status }}
                             </h5>
-                        </div>
 
-                        @if($x->status != "cancelled" && $x->status != "completed")
-                            <form action="/return-vehicle" method="POST">
+                            <div class="d-flex gap-3 mt-3">
+                            @if($x->status != "cancelled" && $x->status != "completed")
+                                <form action="/return-vehicle" method="POST" class="p-0">
+                                    @csrf
+                                    <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
+                                    <button type="submit" class="return_car">
+                                        <span>
+                                            <i class="fa-solid fa-circle-xmark"></i> Cancel
+                                        </span>
+                                    </button>
+                                </form>
+                            @endif
+
+                            <form action="/invoice/{{ $x->id }}" method="GET" class="p-0">
                                 @csrf
                                 <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
-                                <button type="submit" class="return_car">
+                                <button class="return_car">
                                     <span>
-                                        <i class="fa-solid fa-circle-xmark"></i> Cancel
+                                        <i class="fa-solid fa-file-invoice"></i> Generate invoice
                                     </span>
                                 </button>
-                            </form>
-                        @endif
-
-                        <form action="/invoice/{{ $x->id }}" method="GET">
-                            @csrf
-                            <input type="hidden" value="{{ $x->id }}" name="rental_id_number">
-                            <button class="return_car">
-                                <span>
-                                    <i class="fa-solid fa-file-invoice"></i> Generate invoice
-                                </span>
-                            </button>
-                        </form> 
+                            </form> 
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>

@@ -62,7 +62,7 @@
 
         <section class="cars">
             <div class="container d-flex flex-wrap gap-5">
-                <table class="table table-hover" style="font-family:Oxanium;">
+                <table class="table table-hover rental-history-table" style="font-family:Oxanium;">
                     <thead>
                         <tr>
                         <th scope="col">Rental ID</th>

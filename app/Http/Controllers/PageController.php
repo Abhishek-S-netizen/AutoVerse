@@ -360,5 +360,15 @@ class PageController extends Controller
     public function showAdminRegister() {
         return view("admin_register");
     }
+
+    public function showAdminFilteredCommunities( Request $request) {
+        $request->validate([
+            "brand" => "required|exists:cars,brand"
+        ]);
+        $brand = $request->brand;
+
+        $cars = Car::where("brand",$brand)->paginate(6);
+        return view("admin_filtered_communities",compact("cars","brand"));
+    }
 }
 

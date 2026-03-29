@@ -59,57 +59,12 @@
                 {{ $car->brand }} {{ $car->model }} - Community
             </h1>
         </div>
-        <!-- <section class="container my-5 filter-review-brand">
-            <div class="card form-card">
-                <div class="card-body p-4">
-
-                    <h4 class="mb-4 fw-bold">
-                        <i class="fa-solid fa-comments me-2"></i>
-                        Start a Discussion
-                    </h4>
-
-                    <form action="/community-post" method="POST" class="post">
-                        @csrf
-
-                        <!-- Hidden Car ID 
-                        <input type="hidden" name="car_id" value="{{ $car->id }}">
-
-                        <!-- Post Title
-                        <div class="mb-5">
-                            <input type="text"
-                                name="post_title"
-                                class="form-control rounded-3"
-                                placeholder="Give your post a title..."
-                                required>
-                        </div>
-
-                        <div class="mb-5">
-                           <textarea name="post_content"
-                                    class="form-control rounded-3"
-                                    rows="4"
-                                    placeholder="Share your experience with this car..."
-                                    required></textarea>
-                        </div>
-
-                        <!-- Submit Button
-                        <div class="text-center">
-                            <button type="submit" class="add_rent ps-3 pe-3">
-                                <span>
-                                    <i class="fa-solid fa-paper-plane me-2"></i>
-                                    Post
-                                </span>    
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section> -->
 
         <section class="cars mt-5">
-            <div class="container d-flex flex-wrap gap-5">
+            <div class="garage-container gap-5">
                 @foreach($posts as $x)
                     <div class="card service_card span_card">
-                        <div class="card-body">
+                        <div class="card-body rounded-0">
                             <h3 class="card-title fs-4">{{ $x->post_title }}</h3>
                             <h5 class="card-title fs-6">{{ $x->user->name }} </h5>
                             <a href="/user-profile/{{ $x->user->id }}" target="_blank">Check out {{ $x->user->name }}'s profile</a>
@@ -124,7 +79,7 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="mt-3 ps-3 border-start">
+                        <div class="ps-3 border-start">
                             @foreach($x->replies as $reply)
                                 <div class="mb-4">
                                     <strong>{{ $reply->user->name }}</strong>

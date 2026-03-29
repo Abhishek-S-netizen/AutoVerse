@@ -118,6 +118,16 @@ input {
     border-radius: 1rem;
 }
 
+.user-card {
+    font-family: Oxanium;
+    width: 25rem;
+    overflow: hidden;
+    background-color: #504f4f;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+    border: none;
+    border-radius: 1rem;
+}
+
 .past_orders {
     width: 18rem;
 }
@@ -146,6 +156,26 @@ input {
     background-color: #cbcac7;
     border-bottom-left-radius: 0.3rem;
     border-bottom-right-radius: 0.3rem;
+}
+
+.user-card {
+    background-color: #cbcac7;
+}
+
+.user-card div a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.user-card:hover {
+    transform: scale(1.04);
+}
+
+.rental-history-table th,
+.rental-history-table td {
+    background-color: #DEDCD9 !important;
+    border-color: #cbcac7;
 }
 
 .service_card div h5 {

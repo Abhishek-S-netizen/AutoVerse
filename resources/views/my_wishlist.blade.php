@@ -61,33 +61,26 @@
                             <a href="#" class="d-inline-flex align-items-center gap-2">
                                 ₹{{ $x->car->rent_price }} / day <i class="fa-solid fa-arrow-right-long"></i>
                             </a>
-                        </div>
-
-                        <div class="specs-container">
-                            <div>
-                                <div class="card-body" style="background-color:inherit;">
-                                    <p>
-                                        Number of seats : {{ $x->car->seating }}
-                                        <br><br>
-                                        Boot space, seats up : {{ $x->car->bootspace }}
-                                        <br><br>
-                                        Exterior dimensions (L x W x H) : {{ $x->car->exterior_dimensions }}
-                                        <br><br>
-                                        Available fuel types : {{ $x->car->fuel_type }}
-                                        <br><br>
-                                        Fuel economy : {{ $x->car->fuel_economy }}
-                                    </p>
-                                    <form action="/remove-user-wishlist" method="POST" class="remove-wishlist-form">
-                                        @csrf
-                                        <input type="hidden" value="{{ $x->car->id }}" name="car_id_number">
-                                        <button class="remove_wishlist">
-                                            <span>
-                                                <i class="fa-solid fa-heart-circle-minus text-danger"></i> Remove from wishlist
-                                            </span>
-                                        </button>   
-                                    </form>
-                                </div>
-                            </div>
+                            <p class="mt-3">
+                                Number of seats : {{ $x->car->seating }}
+                                <br><br>
+                                Boot space, seats up : {{ $x->car->bootspace }}
+                                <br><br>
+                                Exterior dimensions (L x W x H) : {{ $x->car->exterior_dimensions }}
+                                <br><br>
+                                Available fuel types : {{ $x->car->fuel_type }}
+                                 <br><br>
+                                Fuel economy : {{ $x->car->fuel_economy }}
+                            </p>
+                            <form action="/remove-user-wishlist" method="POST" class="remove-wishlist-form">
+                                @csrf
+                                <input type="hidden" value="{{ $x->car->id }}" name="car_id_number">
+                                <button class="remove_wishlist">
+                                    <span>
+                                        <i class="fa-solid fa-heart-circle-minus text-danger"></i> Remove from wishlist
+                                    </span>
+                                </button>   
+                            </form>
                         </div>
                     </div>
                 @endforeach
