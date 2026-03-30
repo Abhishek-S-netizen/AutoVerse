@@ -250,7 +250,7 @@ class AdminController extends Controller
         $folderName = "car_" . $car->id;
 
         // Use Laravel storage instead of manual mkdir
-        Storage::makeDirectory("public/images/reviews/$folderName");
+        // Storage::makeDirectory("public/images/reviews/$folderName");
 
         // UNIQUE filenames (FIXED)
         $hero_image_name = "hero_" . Str::uuid() . "." . $request->hero_image->extension();
@@ -258,22 +258,32 @@ class AdminController extends Controller
         $drive_image_name = "drive_" . Str::uuid() . "." . $request->drive_image->extension();
 
         // Store files safely
-        Storage::putFileAs("public/images/reviews/$folderName", $request->hero_image, $hero_image_name);
+        Storage::disk('autoverse_main_one')->putFileAs("cars/$folderName", $request->hero_image, $hero_image_name);
+
+        Storage::disk('autoverse_main_one')->putFileAs("cars/$folderName", $request->interior_image, $interior_image_name);
+
+        Storage::disk('autoverse_main_one')->putFileAs("cars/$folderName", $request->drive_image, $drive_image_name);
+
+        /* Storage::putFileAs("public/images/reviews/$folderName", $request->hero_image, $hero_image_name);
         Storage::putFileAs("public/images/reviews/$folderName", $request->interior_image, $interior_image_name);
         Storage::putFileAs("public/images/reviews/$folderName", $request->drive_image, $drive_image_name);
+        */
 
         CarDetail::create([
             'car_id' => $car->id,
             'title' => $request->title,
             'rating' => $request->rating,
 
-            'hero_image' => Storage::url("images/reviews/$folderName/$hero_image_name"),
+            // 'hero_image' => Storage::url("images/reviews/$folderName/$hero_image_name"),
+            'hero_image' => Storage::disk('autoverse_main_one')->url("cars/$folderName/$hero_image_name"),
             'intro_text' => $request->intro_text,
 
-            'interior_image' => Storage::url("images/reviews/$folderName/$interior_image_name"),
+            // 'interior_image' => Storage::url("images/reviews/$folderName/$interior_image_name"),
+            'interior_image' => Storage::disk('autoverse_main_one')->url("cars/$folderName/$interior_image_name"),
             'interior_text' => $request->interior_text,
 
-            'drive_image' => Storage::url("images/reviews/$folderName/$drive_image_name"),
+            // 'drive_image' => Storage::url("images/reviews/$folderName/$drive_image_name"),
+            'drive_image' => Storage::disk('autoverse_main_one')->url("cars/$folderName/$drive_image_name"),
             'drive_text' => $request->drive_text,
 
             'safety_text' => $request->safety_text,
@@ -310,7 +320,6 @@ class AdminController extends Controller
         $car = Car::findOrFail($request->car_id);
 
         $folderName = "car_" . $car->id;
-        Storage::makeDirectory("public/images/reviews/$folderName");
 
         $imagePath = null;
 
@@ -319,13 +328,9 @@ class AdminController extends Controller
 
             $imageName = "highlight_" . Str::uuid() . "." . $image->extension();
 
-            Storage::putFileAs(
-                "public/images/reviews/$folderName",
-                $image,
-                $imageName
-            );
+            Storage::disk('autoverse_main_one')->putFileAs("cars/$folderName", $image, $imageName);
 
-            $imagePath = Storage::url("images/reviews/$folderName/$imageName");
+            $imagePath = Storage::disk('autoverse_main_one')->url("cars/$folderName/$imageName");
         }
 
         CarHighlight::create([
@@ -506,7 +511,7 @@ class AdminController extends Controller
 
         DB::transaction(function() use ($car, $folderName) {
             $car->delete();
-            Storage::deleteDirectory("public/images/reviews/$folderName");
+            Storage::disk("autoverse_main_one")->deleteDirectory("cars/$folderName");
         });
 
         return redirect()->back()->with("success","Car deleted successfully");

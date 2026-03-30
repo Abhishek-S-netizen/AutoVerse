@@ -60,6 +60,17 @@ return [
             'report' => false,
         ],
 
+        'autoverse_main_one' => [
+            'driver' => 's3',
+            'key' => env('LARAVEL_CLOUD_KEY'),
+            'secret' => env('LARAVEL_CLOUD_SECRET'),
+            'region' => env('LARAVEL_CLOUD_REGION'),
+            'bucket' => env('LARAVEL_CLOUD_BUCKET', 'autoverse_main_one'),
+            'url' => env('LARAVEL_CLOUD_URL'),
+            'endpoint' => env('LARAVEL_CLOUD_ENDPOINT'),
+            'use_path_style_endpoint' => true,
+        ],
+
     ],
 
     /*
