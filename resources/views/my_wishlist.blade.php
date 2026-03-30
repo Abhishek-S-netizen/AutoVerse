@@ -58,9 +58,9 @@
                         <img src="{{ asset($x->car->highlight->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title fs-4">{{ $x->car->brand }} {{ $x->car->model }} </h5>
-                            <a href="#" class="d-inline-flex align-items-center gap-2">
-                                ₹{{ $x->car->rent_price }} / day <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
+                            <h6>
+                                ₹{{ $x->car->rent_price }} / day
+                            </h6>
                             <p class="mt-3">
                                 Number of seats : {{ $x->car->seating }}
                                 <br><br>
