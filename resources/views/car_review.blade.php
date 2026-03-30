@@ -177,7 +177,7 @@
         
         <div class="container d-flex mt-5">
             <p class="fs-5">
-                {!! nl2br(e($carDetail->drive_text)) !!}.
+                {!! nl2br(e($carDetail->drive_text)) !!}
             </p>
         </div>
     </section>

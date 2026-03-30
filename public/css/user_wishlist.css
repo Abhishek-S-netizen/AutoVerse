@@ -41,12 +41,14 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    margin: 2rem;
 }
 
 .past-orders-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+    margin: 2rem;
 }
 
 input {
