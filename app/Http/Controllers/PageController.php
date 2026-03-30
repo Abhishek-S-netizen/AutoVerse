@@ -82,8 +82,14 @@ class PageController extends Controller
     {
         // Get all cars along with their one-to-one carDetail
         $allBrands = Car::select("brand")->distinct()->get();
-        $cars = Car::with('carDetail')->paginate(6);
+        $cars = Car::latest()->take(3)->with('carDetail')->get();
         return view('reviews', compact("cars","allBrands"));
+    }
+
+    public function allReviewsPage() {
+        $allBrands = Car::select("brand")->distinct()->get();
+        $cars = Car::with("carDetail")->paginate(6);
+        return view("all_reviews",compact("cars","allBrands"));
     }
 
     /********************************************************************************************** */

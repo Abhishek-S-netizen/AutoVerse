@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $brandSelected }} Reviews</title>
+    <title>Autoverse - Reviews</title>
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
 
      <link href="{{ asset('css/bootstrap-5.3.8-dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -24,36 +24,72 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="{{ asset('css/filter_review_brand.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/reviews.css') }}">
 </head>
 
-<body>
-    @include("loader")
-    <nav class="redirect_reviews">
-        <a href="/all-reviews">
-            <span>All reviews</span>
-        </a>
+<body onload="showReviews()">
+    <nav class="all-reviews-navbar">
+        <a href="/">Home</a>
+        <a href="/electric-cars">EVs</a>
+        <a href="/comparisons">Comparisons</a>
+        <a href="/user">Rent a car</a>
     </nav>
+    <div class="filter-form-wrapper pt-5">
+        <section class="filter-review-brand">
+            <div class="d-flex justify-content-center">
+                <h1 style="font-family: Audiowide;">Filter reviews by brand</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <form action="/filter-reviews" method="GET">
+                    @csrf
 
-    <section class="reviews">
-        <div class="reviews-container gap-5">
+                    <div class="row g-3 mb-4">
+                        <div class="mb-3">
+                                <select name="brand" id="car_id" class="form-control mt-4" required>
+                                        @foreach($allBrands as $x)
+                                            <option value="{{ $x->brand }}">
+                                                    {{ $x->brand }}
+                                            </option>
+                                        @endforeach
+                                </select>
+                        </div>
 
-            @foreach($filteredCars as $x)
-                <div class="card service_card mb-4">
-
-                    <img src="{{ asset($x->carDetail->hero_image) }}" class="card-img-top" alt="{{ $x->brand }} {{ $x->model }}">
-
-                    <div class="card-body">
-                        <h5 class="card-title fs-4">{{ $x->brand }} {{ $x->model }}</h5>
-
-                        <a href="{{ url('/reviews/'.$x->slug) }}" class="d-inline-flex align-items-center gap-2">
-                            Review <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn pt-2 pb-2 ps-3 pe-3 class submit_button">
+                                Filter
+                            </button>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="all-reviews-wrapper">
+        <section class="reviews">
+            <div class="reviews-container gap-5">
+
+                @foreach($cars as $x)
+                    <div class="card service_card mb-4">
+
+                        <img src="{{ asset($x->carDetail->hero_image) }}" class="card-img-top" alt="{{ $x->brand }} {{ $x->model }}">
+
+                        <div class="card-body">
+                            <h5 class="card-title fs-4">{{ $x->brand }} {{ $x->model }}</h5>
+
+                            <a href="{{ url('/reviews/'.$x->slug) }}" class="d-inline-flex align-items-center gap-2">
+                                Review <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+
+        <div class="d-flex justify-content-center pagination_container">
+            {{ $cars->links() }}
         </div>
-    </section>
+    </div>
     
     <footer>
         <div class="d-flex gap-4 mt-3 justify-content-between">
@@ -96,5 +132,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="{{ asset('js\all_reviews.js') }}"></script>
 </body>
 </html>

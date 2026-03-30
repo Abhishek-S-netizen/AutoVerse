@@ -94,6 +94,9 @@
     </section>
 
     <section class="reviews">
+        <div class="d-flex justify-content-center" style="font-family:Audiowide;">
+            <h1>Latest reviews</h1>
+        </div>
         <div class="reviews-container gap-5">
 
             @foreach($cars as $x)
@@ -111,11 +114,14 @@
                 </div>
             @endforeach
         </div>
+        <div class="d-flex justify-content-center fs-5 all-reviews-link">
+            <a href="/all-reviews">
+                <span>
+                    All reviews <i class="fa-solid fa-angles-right all-reviews-chevron"></i>
+                </span>
+            </a>
+        </div>
     </section>
-
-     <div class="d-flex justify-content-center pagination_container">
-        {{ $cars->links() }}
-    </div>
     
     <footer>
         <div class="d-flex gap-4 mt-3 justify-content-between">

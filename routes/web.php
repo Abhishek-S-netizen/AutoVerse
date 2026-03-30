@@ -45,6 +45,7 @@ Route::post("/delete-user-account",[AuthController::class,"deleteUser"])->middle
 Route::get("/compare",[PageController::class,"showCompare"]);
 
 Route::get('/reviews', [PageController::class, 'showAllReviews']);
+Route::get('/all-reviews',[PageController::class,'allReviewsPage']);
 Route::get('/comparisons',[PageController::class, "showAllComparisons"]);
 Route::get('/electric-cars',[PageController::class,"showElectricCars"]);
 
