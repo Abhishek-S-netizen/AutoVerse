@@ -98,40 +98,30 @@ class AdminController extends Controller
             ]
         );
 
-        $folderName = "car_" . $car->id;
-        $folderPath = storage_path("app/public/images/reviews/$folderName");
+$folderName = "car_" . $car->id;
 
-        if(!file_exists($folderPath)) {
-            mkdir($folderPath, 0777, true);
-        }
-
-        $hero_image_name = "hero_" . time() . "." . $request->hero_image->extension();
-        $request->hero_image->move($folderPath,$hero_image_name);
-
-        $interior_image_name = "interior_" . time() . "." . $request->interior_image->extension();
-        $request->interior_image->move($folderPath,$interior_image_name);
-
-        $drive_image_name = "drive_" . time() . "." . $request->drive_image->extension();
-        $request->drive_image->move($folderPath,$drive_image_name);
+$hero_path = $request->hero_image->store("images/reviews/$folderName", "public");
+$interior_path = $request->interior_image->store("images/reviews/$folderName", "public");
+$drive_path = $request->drive_image->store("images/reviews/$folderName", "public");
 
 
         // Save Car Details
-        CarDetail::create([
-            'car_id' => $car->id,
-            'title' => $request->title,
-            'rating' => $request->rating,
+CarDetail::create([
+    'car_id' => $car->id,
+    'title' => $request->title,
+    'rating' => $request->rating,
 
-            'hero_image' => "storage/images/reviews/$folderName/$hero_image_name",
-            'intro_text' => $request->intro_text,
+    'hero_image' => "storage/" . $hero_path,
+    'intro_text' => $request->intro_text,
 
-            'interior_image' => "storage/images/reviews/$folderName/$interior_image_name",
-            'interior_text' => $request->interior_text,
+    'interior_image' => "storage/" . $interior_path,
+    'interior_text' => $request->interior_text,
 
-            'drive_image' => "storage/images/reviews/$folderName/$drive_image_name",
-            'drive_text' => $request->drive_text,
+    'drive_image' => "storage/" . $drive_path,
+    'drive_text' => $request->drive_text,
 
-            'safety_text' => $request->safety_text,
-        ]);
+    'safety_text' => $request->safety_text,
+]);
 
         return redirect()->back()->with('success', 'Car review posted successfully!');
     } 
