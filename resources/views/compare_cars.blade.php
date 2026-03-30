@@ -101,7 +101,7 @@
                         <br><br>
                         <strong>Best for : </strong> {{ $carOne->highlight->best_for }}
                         <br><br>
-                        {{ $carOne->highlight->key_features }}
+                        {!! nl2br(e($carOne->highlight->key_features)) !!}
                     </h5>
                 </div>
             </div>
@@ -207,7 +207,7 @@
                         <br><br>
                         <strong>Best for : </strong> {{ $carTwo->highlight->best_for }}
                         <br><br>
-                        {{ $carTwo->highlight->key_features }}
+                        {!! nl2br(e($carTwo->highlight->key_features)) !!}
                     </h5>
                 </div>
             </div>
