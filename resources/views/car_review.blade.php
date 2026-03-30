@@ -57,7 +57,7 @@
     <section id="hero_image_section">
         <div id="hero_image_container" class="container d-flex justify-content-around gap-5">
             <div>
-                <img id="hero_image" src="{{ Storage::disk('autoverse_main_one')->url($carDetail->hero_image) }}" alt="{{ $car->brand }} {{ $car->model }}">
+                <img id="hero_image" src="{{ asset($carDetail->hero_image) }}" alt="{{ $car->brand }} {{ $car->model }}">
             </div>
 
             <div id="car_meta_info" class="container d-flex flex-column gap-4">
