@@ -35,6 +35,7 @@ class AdminController extends Controller
 
         $adminName = $admin->name;
 
+        $request->session()->regenerate();
         // Store admin session
         session([
             "admin_id" => $admin->id,
@@ -45,7 +46,7 @@ class AdminController extends Controller
 
     /******************************************************************************************* */
 
-    public function storeReview(Request $request)
+    /*public function storeReview(Request $request)
     {
         // Validation
         $request->validate([
@@ -81,8 +82,7 @@ class AdminController extends Controller
         $slug = Str::slug($brand . '-' . $model);
 
         // Create or get Car
-        $car = Car::firstOrCreate(
-            ['slug' => $slug],
+        $car = Car::Create(
             [
                 'brand' => $brand,
                 'model' => $model,
@@ -98,37 +98,37 @@ class AdminController extends Controller
             ]
         );
 
-$folderName = "car_" . $car->id;
+        $folderName = "car_" . $car->id;
 
-$hero_path = $request->hero_image->store("images/reviews/$folderName", "public");
-$interior_path = $request->interior_image->store("images/reviews/$folderName", "public");
-$drive_path = $request->drive_image->store("images/reviews/$folderName", "public");
+        $hero_path = $request->hero_image->store("images/reviews/$folderName", "public");
+        $interior_path = $request->interior_image->store("images/reviews/$folderName", "public");
+        $drive_path = $request->drive_image->store("images/reviews/$folderName", "public");
 
 
-        // Save Car Details
-CarDetail::create([
-    'car_id' => $car->id,
-    'title' => $request->title,
-    'rating' => $request->rating,
+                // Save Car Details
+        CarDetail::create([
+            'car_id' => $car->id,
+            'title' => $request->title,
+            'rating' => $request->rating,
 
-    'hero_image' => "storage/" . $hero_path,
-    'intro_text' => $request->intro_text,
+            'hero_image' => "storage/" . $hero_path,
+            'intro_text' => $request->intro_text,
 
-    'interior_image' => "storage/" . $interior_path,
-    'interior_text' => $request->interior_text,
+            'interior_image' => "storage/" . $interior_path,
+            'interior_text' => $request->interior_text,
 
-    'drive_image' => "storage/" . $drive_path,
-    'drive_text' => $request->drive_text,
+            'drive_image' => "storage/" . $drive_path,
+            'drive_text' => $request->drive_text,
 
-    'safety_text' => $request->safety_text,
-]);
+            'safety_text' => $request->safety_text,
+        ]);
 
         return redirect()->back()->with('success', 'Car review posted successfully!');
-    } 
+    } */
 
     /******************************************************************************************* */
 
-    public function storeHighlight(Request $request)
+    /*public function storeHighlight(Request $request)
     {
         $request->validate([
             'car_id' => 'required|exists:cars,id|unique:car_highlights,car_id',
@@ -197,9 +197,9 @@ CarDetail::create([
         ]);
 
         return redirect()->back()->with('success', 'Highlight added successfully!');
-    } 
+    } */
 
-    /* public function storeReview(Request $request)
+    public function storeReview(Request $request)
     {
         $request->validate([
             'brand' => 'required|string|max:255',
@@ -352,7 +352,7 @@ CarDetail::create([
         ]);
 
         return redirect()->back()->with('success', 'Highlight added successfully!');
-    } */
+    }
 
     /******************************************************************************************* */
 
@@ -421,21 +421,11 @@ CarDetail::create([
         $brand = trim($request->brand);
         $model = trim($request->model);
 
-        $slug = Str::slug($brand . '-' . $model);
-
         $car = Car::findOrFail($request->id_number);
-
-        $folderName = "car_" . $car->id;
-        $folderPath = storage_path("app/public/images/reviews/$folderName");
-
-        if (!file_exists($folderPath)) {
-            mkdir($folderPath, 0777, true);
-        }
 
         $car->update([
             'brand' => $request->brand,
             'model' => $request->model,
-            'slug' => $slug,
             'year' => $request->year,
             'rent_price' => $request->rent,
             'seating' => $request->seating,
@@ -512,15 +502,12 @@ CarDetail::create([
         ]);
 
         $car = Car::findOrFail($request->car_delete_id);
-
         $folderName = "car_" . $car->id;
-        $path = storage_path("app/public/images/reviews/$folderName");
 
-        if(File::exists($path)) {
-            File::deleteDirectory($path);
-        }
-
-        $car->delete();
+        DB::transaction(function() use ($car, $folderName) {
+            $car->delete();
+            Storage::deleteDirectory("public/images/reviews/$folderName");
+        });
 
         return redirect()->back()->with("success","Car deleted successfully");
     }
