@@ -35,7 +35,7 @@
             <h1 id="title">
                 <span class="fs-6 d-flex gap-5 p-0 redirect_links">
                     <a href="/">Home</a>
-                    <a href="/reviews">All Reviews</a>
+                    <a href="/all-reviews">All Reviews</a>
                     <a href="/electric-cars">EVs</a>
                     <a href="/comparisons">Comparisons</a>
 
