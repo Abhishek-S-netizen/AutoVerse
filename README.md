@@ -8,8 +8,13 @@ https://autoverse-main-gzfe0w.free.laravel.cloud/
 
 ## Screenshots
 
-*Add screenshots of the homepage, reviews page, comparison page, rental page, user dashboard, and admin dashboard here.*
+| Homepage | Reviews |
+|----------|---------|
+| ![](screenshots/landing_page.png) | ![](screenshots/landing_page_2.png) |
 
+| Comparison | Admin Dashboard |
+|------------|----------------|
+| ![](screenshots/comparison.png) | ![](screenshots/admin-dashboard.png) |
 ---
 
 ## Features
