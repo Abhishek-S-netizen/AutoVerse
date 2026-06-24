@@ -10,7 +10,8 @@ https://autoverse-main-gzfe0w.free.laravel.cloud/
 
 | Homepage | Reviews |
 |----------|---------|
-| ![](screenshots/landing_page.png) | ![](screenshots/landing_page_2.png) |
+| ![](screenshots/landing_page.png) | ![](screenshots/reviews_page_1.png) |
+| ![](screenshots/landing_page_2.png) | ![](screenshots/reviews_page_2.png) |
 
 | Comparison | Admin Dashboard |
 |------------|----------------|
