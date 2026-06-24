@@ -12,12 +12,16 @@ https://autoverse-main-gzfe0w.free.laravel.cloud/
 |----------|---------|
 | ![](screenshots/landing_page.png) | ![](screenshots/reviews_page_1.png) |
 | ![](screenshots/landing_page_2.png) | ![](screenshots/reviews_page_2.png) |
-
-
+<br><br>
 | Comparison | User Dashboard |
 |------------|----------------|
 | ![](screenshots/comparison_page_1.png) | ![](screenshots/user_dashboard_1.png) |
 | ![](screenshots/comparison_page_2.png) | ![](screenshots/user_dashboard_2.png) |
+<br><br>
+| Comparison |
+|------------|
+![](screenshots/admin_dashboard.png) |
+
 ---
 
 ## Features
