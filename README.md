@@ -2,9 +2,6 @@
 
 AutoVerse is a full-stack automotive platform built using Laravel, PHP, and PostgreSQL. Designed for car enthusiasts, the platform enables users to browse detailed vehicle reviews, compare cars, manage wishlists, and explore rental services through a responsive and user-friendly interface.
 
-## Live Demo
-
-https://autoverse-main-gzfe0w.free.laravel.cloud/
 
 ## Screenshots
 
